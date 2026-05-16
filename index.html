@@ -113,6 +113,50 @@ a { color:inherit; text-decoration:none; }
 .nav-cta-s { display:none; }
 .nav-cta-l { display:inline; }
 
+
+/* ─── LANGUAGE SWITCHER ─────────────────────────── */
+.lang-switch {
+  display:inline-flex; align-items:center;
+  background:rgba(143,169,136,.1);
+  border:1px solid var(--rule);
+  border-radius:100px;
+  padding:3px;
+  font-family:'JetBrains Mono', monospace;
+  font-size:.62rem;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  font-weight:600;
+  margin-right:.85rem;
+  position:relative;
+}
+.lang-switch button {
+  appearance:none; background:transparent; border:none;
+  padding:.32rem .65rem;
+  color:var(--ink-s);
+  cursor:pointer;
+  border-radius:100px;
+  transition:color .25s;
+  font-family:inherit; font-size:inherit; letter-spacing:inherit; font-weight:inherit;
+  position:relative; z-index:1;
+}
+.lang-switch button:hover { color:var(--ink); }
+.lang-switch button.on { color:var(--cream); }
+.lang-switch .pill {
+  position:absolute;
+  top:3px; left:3px;
+  height:calc(100% - 6px);
+  width:calc(50% - 3px);
+  background:var(--ink);
+  border-radius:100px;
+  transition:transform .35s cubic-bezier(.6,.05,.2,1);
+  z-index:0;
+}
+.lang-switch.en .pill { transform:translateX(100%); }
+@media (max-width:720px) {
+  .lang-switch { margin-right:.5rem; font-size:.58rem; }
+  .lang-switch button { padding:.28rem .55rem; }
+}
+
 /* ─── MAIN GRID ──────────────────────────────────── */
 .main {
   display:grid;
@@ -607,12 +651,17 @@ a { color:inherit; text-decoration:none; }
       <span class="brand-name">DÁTIKA</span>
     </a>
     <ul class="nav-mid">
-      <li><a href="#soluciones">Soluciones</a></li>
-      <li><a href="#paraquien">Para quién</a></li>
+      <li><a href="#soluciones" data-i18n="nav.solutions">Soluciones</a></li>
+      <li><a href="#paraquien" data-i18n="nav.whoFor">Para quién</a></li>
     </ul>
-    <a href="mailto:datika.sv@gmail.com" class="nav-cta">
-      <span class="nav-cta-l">Agendá una llamada</span>
-      <span class="nav-cta-s">Agendá</span>
+    <div class="lang-switch" id="langSwitch">
+      <span class="pill"></span>
+      <button data-lang="es" class="on">ES</button>
+      <button data-lang="en">EN</button>
+    </div>
+    <a href="/cdn-cgi/l/email-protection#0a6e6b7e63616b24797c4a6d676b636624696567" class="nav-cta">
+      <span class="nav-cta-l" data-i18n="nav.cta">Agendá una llamada</span>
+      <span class="nav-cta-s" data-i18n="nav.ctaShort">Agendá</span>
       <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
     </a>
   </nav>
@@ -622,18 +671,18 @@ a { color:inherit; text-decoration:none; }
 
     <!-- HERO -->
     <section class="hero fx">
-      <div class="hero-pill"><i></i>Inteligencia de Datos · Centroamérica</div>
-      <h1>
+      <div class="hero-pill"><i></i><span data-i18n="hero.pill">Inteligencia de Datos · Centroamérica</span></div>
+      <h1 data-i18n="hero.h1">
         Decisiones<br>
         <span class="sage">que mueven</span> dinero.
         <span class="em">Para emprendedores con tracción y PYMEs establecidas que ya están cansados de operar a ciegas. Convertimos el desorden de tus datos en reportes claros, automatizados y accionables.</span>
       </h1>
       <div class="hero-btns">
-        <a href="mailto:datika.sv@gmail.com" class="btn btn-d">
+        <a href="/cdn-cgi/l/email-protection#ceaaafbaa7a5afe0bdb88ea9a3afa7a2e0ada1a3" class="btn btn-d" data-i18n="hero.btn1">
           Agendá tu diagnóstico
           <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
         </a>
-        <a href="#soluciones" class="btn btn-o">Cómo trabajamos</a>
+        <a href="#soluciones" class="btn btn-o" data-i18n="hero.btn2">Cómo trabajamos</a>
       </div>
 
       <!-- Process mini strip -->
@@ -641,29 +690,29 @@ a { color:inherit; text-decoration:none; }
         <div class="proc-item">
           <div class="proc-circle">1</div>
           <div>
-            <div class="proc-t">Diagnóstico</div>
-            <div class="proc-d">NDA y revisión inicial</div>
+            <div class="proc-t" data-i18n="proc.1t">Diagnóstico</div>
+            <div class="proc-d" data-i18n="proc.1d">NDA y revisión inicial</div>
           </div>
         </div>
         <div class="proc-item">
           <div class="proc-circle">2</div>
           <div>
-            <div class="proc-t">Diseño</div>
-            <div class="proc-d">Plan, KPIs y alcance</div>
+            <div class="proc-t" data-i18n="proc.2t">Diseño</div>
+            <div class="proc-d" data-i18n="proc.2d">Plan, KPIs y alcance</div>
           </div>
         </div>
         <div class="proc-item">
           <div class="proc-circle">3</div>
           <div>
-            <div class="proc-t">Entrega</div>
-            <div class="proc-d">Dashboards y capacitación</div>
+            <div class="proc-t" data-i18n="proc.3t">Entrega</div>
+            <div class="proc-d" data-i18n="proc.3d">Dashboards y capacitación</div>
           </div>
         </div>
         <div class="proc-item">
           <div class="proc-circle">4</div>
           <div>
-            <div class="proc-t">Seguimiento</div>
-            <div class="proc-d">Revisión y mejora continua</div>
+            <div class="proc-t" data-i18n="proc.4t">Seguimiento</div>
+            <div class="proc-d" data-i18n="proc.4d">Revisión y mejora continua</div>
           </div>
         </div>
       </div>
@@ -673,7 +722,7 @@ a { color:inherit; text-decoration:none; }
     <section class="dash card fx">
       <div class="dash-bar">
         <div class="dd"></div><div class="dd"></div><div class="dd"></div>
-        <span class="dash-label">por qué dátika</span>
+        <span class="dash-label" data-i18n="vals.label">por qué dátika</span>
       </div>
 
       <div class="vals">
@@ -685,8 +734,8 @@ a { color:inherit; text-decoration:none; }
             </svg>
           </div>
           <div>
-            <div class="val-t">Confidencialidad total</div>
-            <div class="val-d">Firmamos NDA antes de mirar tu data. Tu información no sale del proyecto.</div>
+            <div class="val-t" data-i18n="vals.1t">Confidencialidad total</div>
+            <div class="val-d" data-i18n="vals.1d">Firmamos NDA antes de mirar tu data. Tu información no sale del proyecto.</div>
           </div>
         </div>
 
@@ -698,8 +747,8 @@ a { color:inherit; text-decoration:none; }
             </svg>
           </div>
           <div>
-            <div class="val-t">Verdad sin filtros</div>
-            <div class="val-d">Decimos lo que muestran los datos, aunque incomode. La claridad vale más.</div>
+            <div class="val-t" data-i18n="vals.2t">Verdad sin filtros</div>
+            <div class="val-d" data-i18n="vals.2d">Decimos lo que muestran los datos, aunque incomode. La claridad vale más.</div>
           </div>
         </div>
 
@@ -710,8 +759,8 @@ a { color:inherit; text-decoration:none; }
             </svg>
           </div>
           <div>
-            <div class="val-t">Trabajo en equipo</div>
-            <div class="val-d">Dos cabezas — datos y marketing — atendiendo tu cuenta. No proveedores: socios.</div>
+            <div class="val-t" data-i18n="vals.3t">Trabajo en equipo</div>
+            <div class="val-d" data-i18n="vals.3d">Dos cabezas — datos y marketing — atendiendo tu cuenta. No proveedores: socios.</div>
           </div>
         </div>
 
@@ -722,13 +771,13 @@ a { color:inherit; text-decoration:none; }
             </svg>
           </div>
           <div>
-            <div class="val-t">Te enseñamos a usarlo</div>
-            <div class="val-d">Capacitación incluida. No te dejamos dependiente de nosotros para siempre.</div>
+            <div class="val-t" data-i18n="vals.4t">Te enseñamos a usarlo</div>
+            <div class="val-d" data-i18n="vals.4d">Capacitación incluida. No te dejamos dependiente de nosotros para siempre.</div>
           </div>
         </div>
       </div>
 
-      <div class="dash-foot">
+      <div class="dash-foot" data-i18n="vals.foot">
         Sin humo. Sin promesas vacías. Solo claridad sobre tu negocio.
       </div>
     </section>
@@ -736,42 +785,42 @@ a { color:inherit; text-decoration:none; }
     <!-- PILLAR 1 - DATOS -->
     <section class="pillar card hov fx" id="soluciones">
       <div class="pl-num">01</div>
-      <div class="pl-tag">SERVICIO</div>
-      <h3>Inteligencia de Datos</h3>
-      <p>Saber cuánto ganás, qué te cuesta, qué te conviene. Dashboards y análisis con tu data real.</p>
+      <div class="pl-tag" data-i18n="pl.tag">SERVICIO</div>
+      <h3 data-i18n="pl1.title">Inteligencia de Datos</h3>
+      <p data-i18n="pl1.desc">Saber cuánto ganás, qué te cuesta, qué te conviene. Dashboards y análisis con tu data real.</p>
       <ul>
-        <li>Dashboards financieros y comerciales</li>
-        <li>Análisis de rentabilidad por producto</li>
-        <li>Segmentación RFM de clientes</li>
-        <li>Punto de equilibrio y proyecciones</li>
+        <li data-i18n="pl1.li1">Dashboards financieros y comerciales</li>
+        <li data-i18n="pl1.li2">Análisis de rentabilidad por producto</li>
+        <li data-i18n="pl1.li3">Segmentación RFM de clientes</li>
+        <li data-i18n="pl1.li4">Punto de equilibrio y proyecciones</li>
       </ul>
     </section>
 
     <!-- PILLAR 2 - AUTOMATIZACIÓN -->
     <section class="pillar card hov fx">
       <div class="pl-num">02</div>
-      <div class="pl-tag">SERVICIO</div>
-      <h3>Automatización</h3>
-      <p>Recuperá las horas que perdés copiando y pegando. Reportes que se actualizan solos.</p>
+      <div class="pl-tag" data-i18n="pl.tag">SERVICIO</div>
+      <h3 data-i18n="pl2.title">Automatización</h3>
+      <p data-i18n="pl2.desc">Recuperá las horas que perdés copiando y pegando. Reportes que se actualizan solos.</p>
       <ul>
-        <li>Conexión multi-fuente (POS, contable, Ads)</li>
-        <li>Power BI y Looker Studio</li>
-        <li>Actualización automática diaria</li>
-        <li>Alertas y avisos por correo</li>
+        <li data-i18n="pl2.li1">Conexión multi-fuente (POS, contable, Ads)</li>
+        <li data-i18n="pl2.li2">Power BI y Looker Studio</li>
+        <li data-i18n="pl2.li3">Actualización automática diaria</li>
+        <li data-i18n="pl2.li4">Alertas y avisos por correo</li>
       </ul>
     </section>
 
     <!-- PILLAR 3 - MARKETING -->
     <section class="pillar card hov fx" id="problema">
       <div class="pl-num">03</div>
-      <div class="pl-tag">SERVICIO</div>
-      <h3>Marketing Science</h3>
-      <p>Saber qué canal te trae clientes y cuánto te cuestan. Publicidad medible, no humo.</p>
+      <div class="pl-tag" data-i18n="pl.tag">SERVICIO</div>
+      <h3 data-i18n="pl3.title">Marketing Science</h3>
+      <p data-i18n="pl3.desc">Saber qué canal te trae clientes y cuánto te cuestan. Publicidad medible, no humo.</p>
       <ul>
-        <li>Atribución por canal (Meta, Google, etc.)</li>
-        <li>CAC, LTV y ROI por campaña</li>
-        <li>Competencia y posicionamiento</li>
-        <li>Optimización del presupuesto</li>
+        <li data-i18n="pl3.li1">Atribución por canal (Meta, Google, etc.)</li>
+        <li data-i18n="pl3.li2">CAC, LTV y ROI por campaña</li>
+        <li data-i18n="pl3.li3">Competencia y posicionamiento</li>
+        <li data-i18n="pl3.li4">Optimización del presupuesto</li>
       </ul>
     </section>
 
@@ -779,8 +828,8 @@ a { color:inherit; text-decoration:none; }
     <!-- ── PARA QUIÉN — single strip ── -->
     <section class="for-who fx" id="paraquien">
       <div class="for-who-l">
-        <div class="eyebrow">Para quién</div>
-        <h2>Para los que se cansaron<br><em>de decidir por intuición.</em></h2>
+        <div class="eyebrow" data-i18n="who.eyebrow">Para quién</div>
+        <h2 data-i18n="who.h2">Para los que se cansaron<br><em>de decidir por intuición.</em></h2>
       </div>
       <div class="for-who-r">
         <div class="who-row">
@@ -790,8 +839,8 @@ a { color:inherit; text-decoration:none; }
             </svg>
           </div>
           <div>
-            <div class="who-t">Emprendedores con tracción</div>
-            <div class="who-d">Tu negocio ya factura, ya tiene clientes recurrentes — pero la información todavía vive en Excel y libretas.</div>
+            <div class="who-t" data-i18n="who.1t">Emprendedores con tracción</div>
+            <div class="who-d" data-i18n="who.1d">Tu negocio ya factura, ya tiene clientes recurrentes — pero la información todavía vive en Excel y libretas.</div>
           </div>
         </div>
         <div class="who-row">
@@ -803,8 +852,8 @@ a { color:inherit; text-decoration:none; }
             </svg>
           </div>
           <div>
-            <div class="who-t">PYMEs y empresas establecidas</div>
-            <div class="who-d">Ya tenés sistemas, ventas estables, equipo. Pero los reportes llegan tarde y las decisiones se toman a ciegas.</div>
+            <div class="who-t" data-i18n="who.2t">PYMEs y empresas establecidas</div>
+            <div class="who-d" data-i18n="who.2d">Ya tenés sistemas, ventas estables, equipo. Pero los reportes llegan tarde y las decisiones se toman a ciegas.</div>
           </div>
         </div>
         <div class="who-row">
@@ -815,8 +864,8 @@ a { color:inherit; text-decoration:none; }
             </svg>
           </div>
           <div>
-            <div class="who-t">Negocios en su segundo salto</div>
-            <div class="who-d">Crecés, pero sentís que el negocio se complejiza más rápido que tu capacidad de medirlo. Antes de contratar más gente, conocé tus números.</div>
+            <div class="who-t" data-i18n="who.3t">Negocios en su segundo salto</div>
+            <div class="who-d" data-i18n="who.3d">Crecés, pero sentís que el negocio se complejiza más rápido que tu capacidad de medirlo. Antes de contratar más gente, conocé tus números.</div>
           </div>
         </div>
       </div>
@@ -829,12 +878,12 @@ a { color:inherit; text-decoration:none; }
     <div class="fl">
       <span>© 2026 DÁTIKA</span>
       <span class="sep">·</span>
-      <span>Centroamérica</span>
+      <span data-i18n="foot.region">Centroamérica</span>
       <span class="sep">·</span>
       <span>Daniel Pineda &amp; Gabriela Lazo</span>
     </div>
     <div class="fr">
-      <a href="mailto:datika.sv@gmail.com">datika.sv@gmail.com</a>
+      <a href="/cdn-cgi/l/email-protection#e98d889d808288c79a9fa98e84888085c78a8684"><span class="__cf_email__" data-cfemail="452124312c2e246b3633052228242c296b262a28">[email&#160;protected]</span></a>
       <span class="sep">·</span>
       <a href="https://www.instagram.com/somosdatika/">Instagram</a>
       <a href="https://www.linkedin.com/company/somosdatika">LinkedIn</a>
@@ -843,7 +892,118 @@ a { color:inherit; text-decoration:none; }
 
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
+/* ─── i18n ─── */
+const i18n = {
+  es: {},  // Spanish is the source; empty means use existing HTML
+  en: {
+    'nav.solutions': 'Solutions',
+    'nav.whoFor': 'Who it\'s for',
+    'nav.cta': 'Book a call',
+    'nav.ctaShort': 'Book',
+
+    'hero.pill': 'Data Intelligence · Central America',
+    'hero.h1': 'Decisions<br><span class="sage">that move</span> money.<span class="em">For entrepreneurs with traction and established SMBs tired of operating in the dark. We turn your scattered data into clear, automated, actionable reports.</span>',
+    'hero.btn1': 'Book your diagnostic<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>',
+    'hero.btn2': 'How we work',
+
+    'proc.1t': 'Diagnosis',   'proc.1d': 'NDA & initial review',
+    'proc.2t': 'Design',      'proc.2d': 'Plan, KPIs & scope',
+    'proc.3t': 'Delivery',    'proc.3d': 'Dashboards & training',
+    'proc.4t': 'Follow-up',   'proc.4d': 'Review & continuous improvement',
+
+    'vals.label': 'why dátika',
+    'vals.1t': 'Total confidentiality',
+    'vals.1d': 'We sign an NDA before touching your data. Your information never leaves the project.',
+    'vals.2t': 'Truth without filters',
+    'vals.2d': 'We tell you what the data shows, even when it stings. Clarity is worth more.',
+    'vals.3t': 'Real teamwork',
+    'vals.3d': 'Two brains — data and marketing — on your account. Not vendors: partners.',
+    'vals.4t': 'We teach you to use it',
+    'vals.4d': 'Training included. We don\'t leave you dependent on us forever.',
+    'vals.foot': 'No fluff. No empty promises. Just clarity about your business.',
+
+    'pl.tag': 'SERVICE',
+
+    'pl1.title': 'Data Intelligence',
+    'pl1.desc': 'Know how much you make, what it costs, what actually pays off. Dashboards and analysis with your real data.',
+    'pl1.li1': 'Financial and commercial dashboards',
+    'pl1.li2': 'Profitability analysis by product',
+    'pl1.li3': 'RFM customer segmentation',
+    'pl1.li4': 'Break-even point and projections',
+
+    'pl2.title': 'Automation',
+    'pl2.desc': 'Take back the hours you lose copy-pasting. Reports that update themselves.',
+    'pl2.li1': 'Multi-source connection (POS, accounting, Ads)',
+    'pl2.li2': 'Power BI and Looker Studio',
+    'pl2.li3': 'Daily automatic updates',
+    'pl2.li4': 'Alerts and email notifications',
+
+    'pl3.title': 'Marketing Science',
+    'pl3.desc': 'Know which channel brings customers and what they cost you. Measurable advertising, no fluff.',
+    'pl3.li1': 'Channel attribution (Meta, Google, etc.)',
+    'pl3.li2': 'CAC, LTV and ROI per campaign',
+    'pl3.li3': 'Competition and positioning',
+    'pl3.li4': 'Budget optimization',
+
+    'who.eyebrow': 'Who it\'s for',
+    'who.h2': 'For those done<br><em>deciding by gut.</em>',
+    'who.1t': 'Entrepreneurs with traction',
+    'who.1d': 'Your business already bills, has repeat customers — but the information still lives in spreadsheets and notebooks.',
+    'who.2t': 'SMBs and established companies',
+    'who.2d': 'You already have systems, stable sales, a team. But reports arrive late and decisions are made in the dark.',
+    'who.3t': 'Businesses on their second leap',
+    'who.3d': 'You\'re growing, but the business is getting complex faster than your ability to measure it. Before hiring more people, get to know your numbers.',
+
+    'foot.region': 'Central America'
+  }
+};
+
+// store original (Spanish) HTML on first paint so we can restore it
+document.querySelectorAll('[data-i18n]').forEach(el => {
+  el.dataset.i18nEs = el.innerHTML;
+});
+
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (lang === 'es') {
+      el.innerHTML = el.dataset.i18nEs;
+    } else if (i18n.en[key] !== undefined) {
+      el.innerHTML = i18n.en[key];
+    }
+  });
+  // title + meta description
+  if (lang === 'en') {
+    document.title = 'DÁTIKA | Data Intelligence for Entrepreneurs';
+    const m = document.querySelector('meta[name="description"]');
+    if (m) m.content = 'Accelerate your SMB\'s growth with DÁTIKA. Expert consulting in Data Intelligence and Marketing Science. Optimize costs and sell more.';
+  } else {
+    document.title = 'DÁTIKA | Inteligencia de Datos para Emprendedores';
+    const m = document.querySelector('meta[name="description"]');
+    if (m) m.content = 'Acelera el crecimiento de tu PYME con DÁTIKA. Consultoría experta en Inteligencia de Datos y Marketing Science. Optimiza tus costos y vende más.';
+  }
+  // toggle UI
+  const sw = document.getElementById('langSwitch');
+  sw.classList.toggle('en', lang === 'en');
+  sw.querySelectorAll('button').forEach(b => {
+    b.classList.toggle('on', b.dataset.lang === lang);
+  });
+  try { localStorage.setItem('datika-lang', lang); } catch(e){}
+}
+
+document.querySelectorAll('#langSwitch button').forEach(b => {
+  b.addEventListener('click', () => setLang(b.dataset.lang));
+});
+
+// restore saved lang
+try {
+  const saved = localStorage.getItem('datika-lang');
+  if (saved === 'en') setLang('en');
+} catch(e){}
+
 /* Process strip — light up circles sequentially after entrance */
 setTimeout(() => {
   document.querySelectorAll('#procStrip .proc-item').forEach((it, i) => {
