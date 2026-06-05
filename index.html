@@ -1,23 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-11QB5ZGGHC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-11QB5ZGGHC');
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DÁTIKA | Inteligencia de Datos para Emprendedores</title>
 <meta name="description" content="Acelera el crecimiento de tu PYME con DÁTIKA. Consultoría experta en Inteligencia de Datos y Marketing Science. Optimiza tus costos y vende más.">
+
+<!-- Open Graph / redes sociales (tarjeta al compartir el link) -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="DÁTIKA">
+<meta property="og:title" content="DÁTIKA · Inteligencia de Datos para Emprendedores">
+<meta property="og:description" content="Convertimos el desorden de tus datos en reportes claros, automatizados y accionables. Para emprendedores con tracción y PYMEs que ya están cansados de operar a ciegas.">
+<meta property="og:image" content="og-image.jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DÁTIKA — Inteligencia de Datos">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DÁTIKA · Inteligencia de Datos para Emprendedores">
+<meta name="twitter:description" content="Convertimos el desorden de tus datos en reportes claros, automatizados y accionables.">
+<meta name="twitter:image" content="og-image.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="favicon.png">
+
+<!-- Datos estructurados para buscadores (invisible para el usuario) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "DÁTIKA",
+  "description": "Consultoría en Inteligencia de Datos, Automatización y Marketing Science para emprendedores y PYMEs.",
+  "areaServed": "Centroamérica",
+  "email": "datika.sv@gmail.com",
+  "founder": [
+    { "@type": "Person", "name": "Daniel Pineda" },
+    { "@type": "Person", "name": "Gabriela Lazo" }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/somosdatika/",
+    "https://www.linkedin.com/company/somosdatika"
+  ],
+  "knowsAbout": ["Inteligencia de Datos", "Automatización de reportes", "Marketing Science", "Power BI", "Looker Studio"]
+}
+</script>
 <style>
 /* ─── TOKENS (PPTX palette) ─────────────────────── */
 :root {
@@ -49,6 +76,9 @@ body {
 img,svg { display:block; max-width:100%; }
 ::selection { background:var(--sage); color:var(--ink); }
 a { color:inherit; text-decoration:none; }
+/* Foco visible SOLO al navegar con teclado (Tab) — invisible con mouse */
+:focus-visible { outline:2px solid var(--sage-d); outline-offset:3px; border-radius:4px; }
+.for-who a:focus-visible { outline-color:var(--sage-l); }
 
 /* ─── PAGE FRAME ─────────────────────────────────── */
 .page {
@@ -235,18 +265,22 @@ a { color:inherit; text-decoration:none; }
   line-height:.92;
   letter-spacing:-1.5px;
   color:var(--ink);
-  margin-bottom:.9rem;
+  margin-bottom:.4rem;
   text-transform:uppercase;
 }
 .hero h1 .sage { color:var(--sage-d); }
-.hero h1 .em {
+.hero-lede {
   font-family:'Archivo', sans-serif; font-weight:400; font-style:italic;
-  text-transform:none; letter-spacing:-.5px; font-size:.55em;
-  color:var(--ink-s); display:block; line-height:1.3; margin-top:.4rem;
+  text-transform:none; letter-spacing:-.5px;
+  font-size:clamp(1.2rem, 2.2vw, 1.98rem);
+  color:var(--ink-s); line-height:1.3;
+  margin-bottom:.9rem;
+  opacity:0;
+  animation: lede-in .9s cubic-bezier(.6,.05,.2,1) .5s forwards;
 }
-.hero p {
-  color:var(--ink-s); font-size:.95rem; max-width:560px;
-  margin-bottom:1.2rem; line-height:1.6;
+@keyframes lede-in {
+  from { opacity:0; transform:translateY(10px); filter:blur(5px); }
+  to   { opacity:1; transform:translateY(0); filter:blur(0); }
 }
 .hero-btns { display:flex; gap:.55rem; flex-wrap:wrap; }
 .btn {
@@ -263,6 +297,10 @@ a { color:inherit; text-decoration:none; }
 .btn-d:hover { background:var(--sage-d); transform:translateY(-2px); box-shadow:0 10px 22px -10px rgba(30,26,46,.45); }
 .btn-o { border-color:var(--ink); color:var(--ink); }
 .btn-o:hover { background:var(--ink); color:var(--cream); }
+/* light button — for use on the dark (ink) sections */
+.btn-light { background:var(--cream); color:var(--ink); }
+.btn-light:hover { background:var(--sage-l); color:var(--ink); transform:translateY(-2px); box-shadow:0 10px 22px -10px rgba(0,0,0,.45); }
+.fw-cta { margin-top:1.4rem; }
 
 /* ─── HERO SIDE CARD — valores de marca ─────────── */
 .dash {
@@ -475,6 +513,12 @@ a { color:inherit; text-decoration:none; }
   background:var(--sage-d); border-color:var(--sage-d); color:var(--cream);
   transform:scale(1.05);
 }
+.proc-item { cursor:default; }
+.proc-item:hover .proc-circle {
+  background:var(--ink); border-color:var(--ink); color:var(--cream);
+  transform:scale(1.12);
+}
+.proc-item:hover .proc-t { color:var(--sage-d); }
 .proc-t {
   font-family:'Archivo', sans-serif; font-weight:600;
   font-size:.74rem; color:var(--ink); line-height:1.2;
@@ -502,7 +546,7 @@ a { color:inherit; text-decoration:none; }
 .fx:nth-child(8) { animation-delay:.54s; }
 .fx:nth-child(9) { animation-delay:.61s; }
 @media (prefers-reduced-motion: reduce) {
-  .fx { opacity:1; transform:none; animation:none; }
+  .fx, .hero-lede { opacity:1; transform:none; filter:none; animation:none; }
 }
 
 /* ─── RESPONSIVE ─────────────────────────────────── */
@@ -511,16 +555,16 @@ a { color:inherit; text-decoration:none; }
 @media (max-width: 1180px) {
   .page { padding:1rem; gap:.9rem; }
   .main { grid-template-columns: 1fr 1fr; gap:.9rem; }
-  .hero { grid-column: 1 / 3; grid-row:auto; }
-  .dash { grid-column: 1 / 3; grid-row:auto; }
+  .hero { grid-column: 1; grid-row:auto; }
+  .dash { grid-column: 2; grid-row:auto; }
   .pillar { grid-row:auto; }
   .pillar:nth-child(3) { grid-column: 1; }
   .pillar:nth-child(4) { grid-column: 2; }
   .pillar:nth-child(5) { grid-column: 1 / 3; }
-  .for-who { grid-column: 1 / 3; grid-template-columns: 1fr 1.3fr; }
+  .for-who { grid-column: 1 / 3; grid-row: auto; grid-template-columns: 1fr; gap:1.2rem; }
   .capsules { display:none; }
-  /* Make valores card cleaner on tablet — 2 columns of values */
-  .vals { display:grid; grid-template-columns: 1fr 1fr; gap:0 1.2rem; }
+  /* dash es media-ancho en tablet — valores como lista de una columna */
+  .vals { display:flex; flex-direction:column; gap:0; }
 }
 
 /* Mobile — single column, tighter, larger touch targets */
@@ -556,9 +600,8 @@ a { color:inherit; text-decoration:none; }
     letter-spacing:-1px;
     line-height:1;
   }
-  .hero h1 .em {
+  .hero-lede {
     font-size:.95rem; line-height:1.55;
-    margin-top:.6rem;
   }
   .hero-pill { font-size:.58rem; letter-spacing:1.5px; }
   .hero-btns { gap:.5rem; }
@@ -632,7 +675,7 @@ a { color:inherit; text-decoration:none; }
 /* Small phones */
 @media (max-width: 380px) {
   .hero h1 { font-size:1.7rem; }
-  .hero h1 .em { font-size:.88rem; }
+  .hero-lede { font-size:.88rem; }
   .nav-cta {
     padding:.5rem .75rem;
     font-size:.6rem;
@@ -649,9 +692,9 @@ a { color:inherit; text-decoration:none; }
 
   <!-- ── NAV ── -->
   <nav class="nav">
-    <a href="#" class="brand">
+    <a href="#" class="brand" aria-label="DÁTIKA — inicio">
       <div class="brand-sq">
-        <svg viewBox="0 0 18 18" fill="none" stroke="#F4EFE6" stroke-width="2" stroke-linecap="round">
+        <svg aria-hidden="true" viewBox="0 0 18 18" fill="none" stroke="#F4EFE6" stroke-width="2" stroke-linecap="round">
           <rect x="1" y="9"  width="4" height="8"  rx="1"/>
           <rect x="7" y="5"  width="4" height="12" rx="1"/>
           <rect x="13" y="1" width="4" height="16" rx="1"/>
@@ -663,15 +706,15 @@ a { color:inherit; text-decoration:none; }
       <li><a href="#soluciones" data-i18n="nav.solutions">Soluciones</a></li>
       <li><a href="#paraquien" data-i18n="nav.whoFor">Para quién</a></li>
     </ul>
-    <div class="lang-switch" id="langSwitch">
-      <span class="pill"></span>
-      <button data-lang="es" class="on">ES</button>
-      <button data-lang="en">EN</button>
+    <div class="lang-switch" id="langSwitch" role="group" aria-label="Idioma / Language">
+      <span class="pill" aria-hidden="true"></span>
+      <button data-lang="es" class="on" aria-label="Español" aria-pressed="true">ES</button>
+      <button data-lang="en" aria-label="English" aria-pressed="false">EN</button>
     </div>
-    <a href="/cdn-cgi/l/email-protection#0a6e6b7e63616b24797c4a6d676b636624696567" class="nav-cta">
+    <a href="/cdn-cgi/l/email-protection#eb8f8a9f82808ac5989dab8c868a8287c5888486" class="nav-cta js-mailto">
       <span class="nav-cta-l" data-i18n="nav.cta">Agendá una llamada</span>
       <span class="nav-cta-s" data-i18n="nav.ctaShort">Agendá</span>
-      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      <svg aria-hidden="true" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
     </a>
   </nav>
 
@@ -684,12 +727,12 @@ a { color:inherit; text-decoration:none; }
       <h1 data-i18n="hero.h1">
         Decisiones<br>
         <span class="sage">que mueven</span> dinero.
-        <span class="em">Para emprendedores con tracción y PYMEs establecidas que ya están cansados de operar a ciegas. Convertimos el desorden de tus datos en reportes claros, automatizados y accionables.</span>
       </h1>
+      <p class="hero-lede" data-i18n="hero.lede">Para emprendedores con tracción y PYMEs establecidas que ya están cansados de operar a ciegas. Convertimos el desorden de tus datos en reportes claros, automatizados y accionables.</p>
       <div class="hero-btns">
-        <a href="/cdn-cgi/l/email-protection#ceaaafbaa7a5afe0bdb88ea9a3afa7a2e0ada1a3" class="btn btn-d" data-i18n="hero.btn1">
-          Agendá tu diagnóstico
-          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        <a href="/cdn-cgi/l/email-protection#81e5e0f5e8eae0aff2f7c1e6ece0e8edafe2eeec" class="btn btn-d js-mailto">
+          <span data-i18n="hero.btn1">Agendá tu diagnóstico</span>
+          <svg aria-hidden="true" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
         </a>
         <a href="#soluciones" class="btn btn-o" data-i18n="hero.btn2">Cómo trabajamos</a>
       </div>
@@ -737,7 +780,7 @@ a { color:inherit; text-decoration:none; }
       <div class="vals">
         <div class="val">
           <div class="val-icon">
-            <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <svg aria-hidden="true" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
               <rect x="4" y="11" width="14" height="9" rx="1.5"/>
               <path d="M8 11V7a3 3 0 016 0v4"/>
             </svg>
@@ -750,7 +793,7 @@ a { color:inherit; text-decoration:none; }
 
         <div class="val">
           <div class="val-icon">
-            <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <svg aria-hidden="true" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
               <circle cx="11" cy="11" r="8"/>
               <path d="M7 11l3 3 5-6"/>
             </svg>
@@ -763,7 +806,7 @@ a { color:inherit; text-decoration:none; }
 
         <div class="val">
           <div class="val-icon">
-            <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <svg aria-hidden="true" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
               <path d="M11 3L3 8v10h6v-6h4v6h6V8z"/>
             </svg>
           </div>
@@ -775,7 +818,7 @@ a { color:inherit; text-decoration:none; }
 
         <div class="val">
           <div class="val-icon">
-            <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <svg aria-hidden="true" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
               <path d="M4 11l4-4 4 4 4-4M4 16l4-4 4 4 4-4"/>
             </svg>
           </div>
@@ -839,11 +882,15 @@ a { color:inherit; text-decoration:none; }
       <div class="for-who-l">
         <div class="eyebrow" data-i18n="who.eyebrow">Para quién</div>
         <h2 data-i18n="who.h2">Para los que se cansaron<br><em>de decidir por intuición.</em></h2>
+        <a href="/cdn-cgi/l/email-protection#dabebbaeb3b1bbf4a9ac9abdb7bbb3b6f4b9b5b7" class="btn btn-light js-mailto fw-cta">
+          <span data-i18n="who.cta">Agendá tu diagnóstico</span>
+          <svg aria-hidden="true" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        </a>
       </div>
       <div class="for-who-r">
         <div class="who-row">
           <div class="who-icon">
-            <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <svg aria-hidden="true" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
               <path d="M3 18h16M5 18V9l6-5 6 5v9M9 18v-5h4v5"/>
             </svg>
           </div>
@@ -854,7 +901,7 @@ a { color:inherit; text-decoration:none; }
         </div>
         <div class="who-row">
           <div class="who-icon">
-            <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <svg aria-hidden="true" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
               <rect x="3" y="8" width="6" height="11" rx="1"/>
               <rect x="13" y="3" width="6" height="16" rx="1"/>
               <path d="M3 19h16"/>
@@ -867,7 +914,7 @@ a { color:inherit; text-decoration:none; }
         </div>
         <div class="who-row">
           <div class="who-icon">
-            <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <svg aria-hidden="true" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
               <circle cx="11" cy="11" r="8"/>
               <path d="M11 6v5l3 2"/>
             </svg>
@@ -892,7 +939,7 @@ a { color:inherit; text-decoration:none; }
       <span>Daniel Pineda &amp; Gabriela Lazo</span>
     </div>
     <div class="fr">
-      <a href="/cdn-cgi/l/email-protection#e98d889d808288c79a9fa98e84888085c78a8684"><span class="__cf_email__" data-cfemail="452124312c2e246b3633052228242c296b262a28">[email&#160;protected]</span></a>
+      <a href="/cdn-cgi/l/email-protection#debabfaab7b5bff0ada89eb9b3bfb7b2f0bdb1b3"><span class="__cf_email__" data-cfemail="1d797c6974767c336e6b5d7a707c7471337e7270">[email&#160;protected]</span></a>
       <span class="sep">·</span>
       <a href="https://www.instagram.com/somosdatika/">Instagram</a>
       <a href="https://www.linkedin.com/company/somosdatika">LinkedIn</a>
@@ -913,8 +960,9 @@ const i18n = {
     'nav.ctaShort': 'Book',
 
     'hero.pill': 'Data Intelligence · Central America',
-    'hero.h1': 'Decisions<br><span class="sage">that move</span> money.<span class="em">For entrepreneurs with traction and established SMBs tired of operating in the dark. We turn your scattered data into clear, automated, actionable reports.</span>',
-    'hero.btn1': 'Book your diagnostic<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>',
+    'hero.h1': 'Decisions<br><span class="sage">that move</span> money.',
+    'hero.lede': 'For entrepreneurs with traction and established SMBs tired of operating in the dark. We turn your scattered data into clear, automated, actionable reports.',
+    'hero.btn1': 'Book your diagnostic',
     'hero.btn2': 'How we work',
 
     'proc.1t': 'Diagnosis',   'proc.1d': 'NDA & initial review',
@@ -958,6 +1006,7 @@ const i18n = {
 
     'who.eyebrow': 'Who it\'s for',
     'who.h2': 'For those done<br><em>deciding by gut.</em>',
+    'who.cta': 'Book your diagnostic',
     'who.1t': 'Entrepreneurs with traction',
     'who.1d': 'Your business already bills, has repeat customers — but the information still lives in spreadsheets and notebooks.',
     'who.2t': 'SMBs and established companies',
@@ -973,6 +1022,24 @@ const i18n = {
 document.querySelectorAll('[data-i18n]').forEach(el => {
   el.dataset.i18nEs = el.innerHTML;
 });
+
+/* ─── Mailto pre-llenado (asunto + plantilla, según idioma) ─── */
+const MAILTO = {
+  to: 'datika.sv@gmail.com',
+  es: {
+    subject: 'Quiero un diagnóstico — DÁTIKA',
+    body: 'Hola DÁTIKA,\n\nMi negocio se dedica a: \nLo que más me gustaría resolver: \nFacturación / tamaño aproximado: \n\nQuedo atento(a). ¡Gracias!'
+  },
+  en: {
+    subject: "I'd like a diagnostic — DÁTIKA",
+    body: 'Hi DÁTIKA,\n\nMy business does: \nWhat I would most like to solve: \nApproximate revenue / size: \n\nLooking forward to hearing from you. Thanks!'
+  }
+};
+function applyMailto(lang) {
+  const m = MAILTO[lang] || MAILTO.es;
+  const href = `mailto:${MAILTO.to}?subject=${encodeURIComponent(m.subject)}&body=${encodeURIComponent(m.body)}`;
+  document.querySelectorAll('a.js-mailto').forEach(a => { a.href = href; });
+}
 
 function setLang(lang) {
   document.documentElement.lang = lang;
@@ -998,9 +1065,12 @@ function setLang(lang) {
   const sw = document.getElementById('langSwitch');
   sw.classList.toggle('en', lang === 'en');
   sw.querySelectorAll('button').forEach(b => {
-    b.classList.toggle('on', b.dataset.lang === lang);
+    const active = b.dataset.lang === lang;
+    b.classList.toggle('on', active);
+    b.setAttribute('aria-pressed', active ? 'true' : 'false');
   });
   try { localStorage.setItem('datika-lang', lang); } catch(e){}
+  applyMailto(lang);
 }
 
 document.querySelectorAll('#langSwitch button').forEach(b => {
@@ -1012,13 +1082,28 @@ try {
   const saved = localStorage.getItem('datika-lang');
   if (saved === 'en') setLang('en');
 } catch(e){}
+applyMailto(document.documentElement.lang === 'en' ? 'en' : 'es');
 
-/* Process strip — light up circles sequentially after entrance */
-setTimeout(() => {
-  document.querySelectorAll('#procStrip .proc-item').forEach((it, i) => {
-    setTimeout(() => it.classList.add('on'), i * 250);
-  });
-}, 900);
+/* Process strip — light up circles sequentially when it scrolls into view */
+const procStrip = document.getElementById('procStrip');
+if (procStrip) {
+  let played = false;
+  const runProc = () => {
+    if (played) return;
+    played = true;
+    procStrip.querySelectorAll('.proc-item').forEach((it, i) => {
+      setTimeout(() => it.classList.add('on'), i * 250);
+    });
+  };
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { runProc(); io.disconnect(); } });
+    }, { threshold: 0.4 });
+    io.observe(procStrip);
+  } else {
+    setTimeout(runProc, 900);
+  }
+}
 
 /* Smooth anchor scroll for the few in-page links */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
