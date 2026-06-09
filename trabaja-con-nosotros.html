@@ -3,6 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Modo de consentimiento de Google (Consent Mode v2) — por defecto: denegado -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+  try{ if(localStorage.getItem('datika-consent')==='granted'){ gtag('consent','update',{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'}); } }catch(e){}
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-11QB5ZGGHC"></script>
 <script>
@@ -863,6 +875,47 @@ a { color:inherit; text-decoration:none; }
   .cta-strip .btn { width:100%; justify-content:center; }
 }
 
+/* ─── BANNER DE COOKIES ─────────────────────────── */
+#ccBanner {
+  position:fixed; left:18px; bottom:18px; z-index:300;
+  width:330px; max-width:calc(100vw - 36px);
+  background:var(--paper); border:1px solid var(--rule);
+  border-radius:16px; padding:1.1rem 1.15rem 1.05rem;
+  box-shadow:0 18px 44px -16px rgba(30,26,46,.35);
+  opacity:0; transform:translateY(14px);
+  transition:opacity .35s ease, transform .35s cubic-bezier(.6,.05,.2,1);
+}
+#ccBanner.show { opacity:1; transform:translateY(0); }
+#ccBanner .cc-title {
+  font-family:'JetBrains Mono', monospace;
+  font-size:.6rem; letter-spacing:2px; text-transform:uppercase;
+  color:var(--sage-d); margin-bottom:.45rem; font-weight:500;
+}
+#ccBanner .cc-text {
+  font-size:.78rem; color:var(--ink-s); line-height:1.5;
+  margin:0 0 .85rem;
+}
+#ccBanner .cc-btns { display:flex; gap:.5rem; flex-wrap:wrap; }
+#ccBanner button {
+  appearance:none; cursor:pointer; border-radius:8px;
+  font-family:'Archivo', sans-serif; font-weight:600;
+  font-size:.68rem; text-transform:uppercase; letter-spacing:1.2px;
+  padding:.6rem .85rem; transition:background .25s, color .25s, transform .25s;
+  flex:1; white-space:nowrap;
+}
+#ccBanner .cc-ok { background:var(--ink); color:var(--cream); border:1.5px solid var(--ink); }
+#ccBanner .cc-ok:hover { background:var(--sage-d); border-color:var(--sage-d); transform:translateY(-1px); }
+#ccBanner .cc-no { background:transparent; color:var(--ink); border:1.5px solid var(--rule); }
+#ccBanner .cc-no:hover { border-color:var(--ink); }
+[data-theme="dark"] #ccBanner { box-shadow:0 18px 44px -14px rgba(0,0,0,.7); }
+[data-theme="dark"] #ccBanner .cc-ok { background:#ECE7DC; color:#1E1A2E; border-color:#ECE7DC; }
+[data-theme="dark"] #ccBanner .cc-ok:hover { background:var(--sage-l); border-color:var(--sage-l); }
+[data-theme="dark"] #ccBanner .cc-no { color:#ECE7DC; }
+[data-theme="dark"] #ccBanner .cc-no:hover { border-color:#ECE7DC; }
+@media (max-width:720px) {
+  #ccBanner { left:12px; right:12px; bottom:12px; width:auto; }
+}
+
 </style>
 <style>
 /* ─── Estilos propios de Trabajá con nosotros ─── */
@@ -1061,6 +1114,8 @@ a { color:inherit; text-decoration:none; }
       <span class="sep">·</span>
       <a href="https://www.instagram.com/somosdatika/">Instagram</a>
       <a href="https://www.linkedin.com/company/somosdatika">LinkedIn</a>
+      <span class="sep">·</span>
+      <a href="#" id="ccManage">Cookies</a>
     </div>
   </footer>
 
@@ -1189,6 +1244,59 @@ window.DATIKA_META = {
     document.querySelectorAll('[data-email]').forEach(function (el) {
       el.textContent = EMAIL;
       if (el.tagName === 'A') el.href = 'mailto:' + EMAIL;
+    });
+  }
+
+  /* ─── Banner de consentimiento de cookies (Consent Mode v2) ─── */
+  var ccChoice = null;
+  try { ccChoice = localStorage.getItem('datika-consent'); } catch (e) {}
+
+  function ccApply(state) {
+    try { localStorage.setItem('datika-consent', state); } catch (e) {}
+    if (state === 'granted' && typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', {
+        ad_storage: 'granted', ad_user_data: 'granted',
+        ad_personalization: 'granted', analytics_storage: 'granted'
+      });
+    }
+    var b = document.getElementById('ccBanner');
+    if (b) { b.classList.remove('show'); setTimeout(function () { b.remove(); }, 350); }
+  }
+
+  function ccShow() {
+    if (document.getElementById('ccBanner')) return;
+    var lang = document.documentElement.lang === 'en' ? 'en' : 'es';
+    var T = {
+      es: { title: 'Privacidad y cookies', text: 'Usamos cookies de Google Analytics solo para entender cómo se usa el sitio. Vos decidís.', ok: 'Aceptar medición', no: 'Solo lo esencial' },
+      en: { title: 'Privacy & cookies', text: 'We use Google Analytics cookies only to understand how the site is used. You decide.', ok: 'Accept measurement', no: 'Essentials only' }
+    }[lang];
+    var el = document.createElement('div');
+    el.id = 'ccBanner';
+    el.setAttribute('role', 'dialog');
+    el.setAttribute('aria-label', T.title);
+    el.innerHTML =
+      '<div class="cc-title">' + T.title + '</div>' +
+      '<p class="cc-text">' + T.text + '</p>' +
+      '<div class="cc-btns">' +
+        '<button type="button" class="cc-ok">' + T.ok + '</button>' +
+        '<button type="button" class="cc-no">' + T.no + '</button>' +
+      '</div>';
+    document.body.appendChild(el);
+    el.querySelector('.cc-ok').addEventListener('click', function () { ccApply('granted'); });
+    el.querySelector('.cc-no').addEventListener('click', function () { ccApply('denied'); });
+    requestAnimationFrame(function () { el.classList.add('show'); });
+  }
+
+  if (ccChoice !== 'granted' && ccChoice !== 'denied') {
+    setTimeout(ccShow, 900);
+  }
+  // Enlace "Cookies" del footer — permite cambiar la decisión
+  var ccManage = document.getElementById('ccManage');
+  if (ccManage) {
+    ccManage.addEventListener('click', function (e) {
+      e.preventDefault();
+      try { localStorage.removeItem('datika-consent'); } catch (err) {}
+      ccShow();
     });
   }
 
