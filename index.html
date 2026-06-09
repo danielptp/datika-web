@@ -3,6 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-11QB5ZGGHC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-11QB5ZGGHC');
+</script>
+
 <title>DÁTIKA | Inteligencia de Datos para Emprendedores</title>
 <meta name="description" content="Acelera el crecimiento de tu PYME con DÁTIKA. Consultoría experta en Inteligencia de Datos y Marketing Science. Optimiza tus costos y vende más.">
 
@@ -12,18 +22,22 @@
 <meta property="og:site_name" content="DÁTIKA">
 <meta property="og:title" content="DÁTIKA · Inteligencia de Datos para Emprendedores">
 <meta property="og:description" content="Convertimos el desorden de tus datos en reportes claros, automatizados y accionables. Para emprendedores con tracción y PYMEs que ya están cansados de operar a ciegas.">
-<meta property="og:image" content="og-image.jpeg">
+<meta property="og:image" content="og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="DÁTIKA — Inteligencia de Datos">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="DÁTIKA · Inteligencia de Datos para Emprendedores">
 <meta name="twitter:description" content="Convertimos el desorden de tus datos en reportes claros, automatizados y accionables.">
-<meta name="twitter:image" content="og-image.jpeg">
+<meta name="twitter:image" content="og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="favicon.png">
+<link rel="alternate" hreflang="es" href="?lang=es">
+<link rel="alternate" hreflang="en" href="?lang=en">
+<link rel="alternate" hreflang="x-default" href="?lang=es">
+<script>(function(){try{var t=localStorage.getItem('datika-theme')||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
 
 <!-- Datos estructurados para buscadores (invisible para el usuario) -->
 <script type="application/ld+json">
@@ -33,7 +47,6 @@
   "name": "DÁTIKA",
   "description": "Consultoría en Inteligencia de Datos, Automatización y Marketing Science para emprendedores y PYMEs.",
   "areaServed": "Centroamérica",
-  "email": "datika.sv@gmail.com",
   "founder": [
     { "@type": "Person", "name": "Daniel Pineda" },
     { "@type": "Person", "name": "Gabriela Lazo" }
@@ -45,643 +58,7 @@
   "knowsAbout": ["Inteligencia de Datos", "Automatización de reportes", "Marketing Science", "Power BI", "Looker Studio"]
 }
 </script>
-<style>
-/* ─── TOKENS (PPTX palette) ─────────────────────── */
-:root {
-  --ink:    #1E1A2E;   /* deep aubergine */
-  --ink-s:  #3D3550;   /* softer ink */
-  --sage:   #8FA988;   /* brand sage */
-  --sage-d: #6B8869;   /* deeper sage */
-  --sage-l: #B5C9B0;   /* lighter sage */
-  --cream:  #F4EFE6;   /* page cream */
-  --paper:  #FBF8F1;   /* lighter paper */
-  --rule:   #D9D2C4;
-  --rust:   #C2462B;   /* accent */
-  --shadow: 0 1px 0 rgba(30,26,46,.04), 0 12px 32px -16px rgba(30,26,46,.18);
-}
-
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html, body { height:100%; }
-html { scroll-behavior:auto; -webkit-text-size-adjust:100%; }
-body {
-  background:var(--cream);
-  color:var(--ink);
-  font-family:'Archivo', sans-serif;
-  font-weight:400;
-  line-height:1.5;
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-}
-img,svg { display:block; max-width:100%; }
-::selection { background:var(--sage); color:var(--ink); }
-a { color:inherit; text-decoration:none; }
-/* Foco visible SOLO al navegar con teclado (Tab) — invisible con mouse */
-:focus-visible { outline:2px solid var(--sage-d); outline-offset:3px; border-radius:4px; }
-.for-who a:focus-visible { outline-color:var(--sage-l); }
-
-/* ─── PAGE FRAME ─────────────────────────────────── */
-.page {
-  max-width:1480px;
-  margin:0 auto;
-  padding:1.4rem 1.6rem;
-  min-height:100vh;
-  display:grid;
-  grid-template-rows:auto 1fr auto;
-  gap:1.2rem;
-  position:relative;
-}
-
-/* decorative sage capsules — echo PPTX cover */
-.capsules {
-  position:fixed; right:-40px; top:60px; bottom:60px;
-  width:90px; z-index:0; pointer-events:none;
-  display:flex; gap:14px;
-}
-.capsules i {
-  flex:1; background:var(--sage); border-radius:50px;
-  opacity:.18;
-}
-.capsules i:nth-child(1) { animation:cap-pulse 6s ease-in-out infinite; }
-.capsules i:nth-child(2) { animation:cap-pulse 6s ease-in-out infinite .8s; }
-@keyframes cap-pulse {
-  0%,100% { transform:translateY(0); opacity:.18; }
-  50%     { transform:translateY(-12px); opacity:.26; }
-}
-
-/* ─── NAV ────────────────────────────────────────── */
-.nav {
-  display:flex; align-items:center; justify-content:space-between;
-  position:relative; z-index:5;
-}
-.brand { display:flex; align-items:center; gap:.55rem; }
-.brand-sq {
-  width:32px; height:32px; border-radius:8px; background:var(--ink);
-  display:flex; align-items:center; justify-content:center;
-  transition:transform .35s cubic-bezier(.6,.05,.2,1);
-}
-.brand:hover .brand-sq { transform:rotate(-8deg) scale(1.06); }
-.brand-sq svg { width:16px; height:16px; }
-.brand-name {
-  font-family:'Archivo Black', sans-serif;
-  font-size:1.25rem; letter-spacing:-.5px; color:var(--ink);
-}
-.nav-mid {
-  display:flex; gap:1.8rem; list-style:none;
-}
-.nav-mid a {
-  font-size:.72rem; text-transform:uppercase; letter-spacing:2px;
-  color:var(--ink-s); font-weight:500; position:relative;
-  transition:color .25s;
-}
-.nav-mid a:hover { color:var(--ink); }
-.nav-mid a::after {
-  content:""; position:absolute; left:0; bottom:-5px; width:0; height:1.5px;
-  background:var(--sage-d); transition:width .3s ease;
-}
-.nav-mid a:hover::after { width:100%; }
-.nav-cta {
-  display:inline-flex; align-items:center; gap:.45rem;
-  padding:.6rem 1.1rem; background:var(--ink); color:var(--cream);
-  border-radius:7px; font-size:.74rem; text-transform:uppercase;
-  letter-spacing:1.6px; font-weight:600;
-  transition:transform .25s, background .25s;
-}
-.nav-cta:hover { background:var(--sage-d); transform:translateY(-1px); }
-.nav-cta svg { width:11px; height:11px; }
-.nav-cta-s { display:none; }
-.nav-cta-l { display:inline; }
-
-
-/* ─── LANGUAGE SWITCHER ─────────────────────────── */
-.lang-switch {
-  display:inline-flex; align-items:center;
-  background:rgba(143,169,136,.1);
-  border:1px solid var(--rule);
-  border-radius:100px;
-  padding:3px;
-  font-family:'JetBrains Mono', monospace;
-  font-size:.62rem;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-  font-weight:600;
-  margin-right:.85rem;
-  position:relative;
-}
-.lang-switch button {
-  appearance:none; background:transparent; border:none;
-  padding:.32rem .65rem;
-  color:var(--ink-s);
-  cursor:pointer;
-  border-radius:100px;
-  transition:color .25s;
-  font-family:inherit; font-size:inherit; letter-spacing:inherit; font-weight:inherit;
-  position:relative; z-index:1;
-}
-.lang-switch button:hover { color:var(--ink); }
-.lang-switch button.on { color:var(--cream); }
-.lang-switch .pill {
-  position:absolute;
-  top:3px; left:3px;
-  height:calc(100% - 6px);
-  width:calc(50% - 3px);
-  background:var(--ink);
-  border-radius:100px;
-  transition:transform .35s cubic-bezier(.6,.05,.2,1);
-  z-index:0;
-}
-.lang-switch.en .pill { transform:translateX(100%); }
-@media (max-width:720px) {
-  .lang-switch { margin-right:.5rem; font-size:.58rem; }
-  .lang-switch button { padding:.28rem .55rem; }
-}
-
-/* ─── MAIN GRID ──────────────────────────────────── */
-.main {
-  display:grid;
-  grid-template-columns: 1.05fr 1.25fr 1fr;
-  grid-template-rows: auto auto auto;
-  gap:1rem;
-  position:relative; z-index:1;
-}
-
-/* common card */
-.card {
-  background:var(--paper);
-  border:1px solid var(--rule);
-  border-radius:18px;
-  padding:1.4rem;
-  position:relative;
-  box-shadow:var(--shadow);
-  transition:transform .35s cubic-bezier(.6,.05,.2,1), box-shadow .35s ease;
-}
-.card.hov:hover { transform:translateY(-3px); box-shadow:0 1px 0 rgba(30,26,46,.05), 0 22px 44px -18px rgba(30,26,46,.22); }
-
-.eyebrow {
-  display:inline-flex; align-items:center; gap:.45rem;
-  font-family:'JetBrains Mono', monospace;
-  font-size:.62rem; letter-spacing:2.2px; text-transform:uppercase;
-  color:var(--sage-d); margin-bottom:.6rem; font-weight:500;
-}
-.eyebrow::before {
-  content:""; width:14px; height:1px; background:var(--sage-d); display:inline-block;
-}
-
-/* ─── HERO (top-left, spans 2 cols) ─────────────── */
-.hero {
-  grid-column: 1 / 3;
-  grid-row: 1;
-  padding:2.1rem 2rem 1.9rem;
-  background:var(--paper);
-  border:1px solid var(--rule);
-  border-radius:18px;
-  position:relative; overflow:hidden;
-  box-shadow:var(--shadow);
-}
-.hero::before {
-  content:""; position:absolute; top:-50px; right:-50px;
-  width:220px; height:220px; border-radius:50%;
-  background:radial-gradient(circle, rgba(143,169,136,.22), transparent 70%);
-  pointer-events:none;
-}
-.hero-pill {
-  display:inline-flex; align-items:center; gap:.45rem;
-  font-family:'JetBrains Mono', monospace;
-  font-size:.62rem; letter-spacing:2px; text-transform:uppercase;
-  color:var(--ink-s); padding:.32rem .7rem;
-  border:1px solid var(--rule); border-radius:100px;
-  background:rgba(143,169,136,.08); margin-bottom:1rem;
-}
-.hero-pill i {
-  width:6px; height:6px; border-radius:50%; background:var(--sage-d);
-  animation:blink 2s ease infinite;
-  box-shadow:0 0 0 4px rgba(143,169,136,.2);
-}
-@keyframes blink { 0%,100% { opacity:1; } 50% { opacity:.3; } }
-
-.hero h1 {
-  font-family:'Archivo Black', sans-serif;
-  font-size:clamp(2.2rem, 4vw, 3.6rem);
-  line-height:.92;
-  letter-spacing:-1.5px;
-  color:var(--ink);
-  margin-bottom:.4rem;
-  text-transform:uppercase;
-}
-.hero h1 .sage { color:var(--sage-d); }
-.hero-lede {
-  font-family:'Archivo', sans-serif; font-weight:400; font-style:italic;
-  text-transform:none; letter-spacing:-.5px;
-  font-size:clamp(1.2rem, 2.2vw, 1.98rem);
-  color:var(--ink-s); line-height:1.3;
-  margin-bottom:.9rem;
-  opacity:0;
-  animation: lede-in .9s cubic-bezier(.6,.05,.2,1) .5s forwards;
-}
-@keyframes lede-in {
-  from { opacity:0; transform:translateY(10px); filter:blur(5px); }
-  to   { opacity:1; transform:translateY(0); filter:blur(0); }
-}
-.hero-btns { display:flex; gap:.55rem; flex-wrap:wrap; }
-.btn {
-  display:inline-flex; align-items:center; gap:.4rem;
-  padding:.7rem 1.2rem; font-size:.74rem; font-weight:600;
-  text-transform:uppercase; letter-spacing:1.4px;
-  border-radius:8px; border:1.5px solid transparent;
-  transition:all .25s cubic-bezier(.6,.05,.2,1);
-  cursor:pointer;
-}
-.btn svg { width:12px; height:12px; transition:transform .25s; }
-.btn:hover svg { transform:translateX(3px); }
-.btn-d { background:var(--ink); color:var(--cream); }
-.btn-d:hover { background:var(--sage-d); transform:translateY(-2px); box-shadow:0 10px 22px -10px rgba(30,26,46,.45); }
-.btn-o { border-color:var(--ink); color:var(--ink); }
-.btn-o:hover { background:var(--ink); color:var(--cream); }
-/* light button — for use on the dark (ink) sections */
-.btn-light { background:var(--cream); color:var(--ink); }
-.btn-light:hover { background:var(--sage-l); color:var(--ink); transform:translateY(-2px); box-shadow:0 10px 22px -10px rgba(0,0,0,.45); }
-.fw-cta { margin-top:1.4rem; }
-
-/* ─── HERO SIDE CARD — valores de marca ─────────── */
-.dash {
-  grid-column: 3;
-  grid-row: 1;
-  background:var(--ink);
-  color:var(--cream);
-  padding:1.2rem 1.2rem 1rem;
-  display:flex; flex-direction:column;
-}
-.dash-bar { display:flex; align-items:center; gap:.45rem; margin-bottom:1rem; }
-.dd { width:7px; height:7px; border-radius:50%; }
-.dd:nth-child(1){background:#e07a5f;}
-.dd:nth-child(2){background:#d4a373;}
-.dd:nth-child(3){background:var(--sage);}
-.dash-label {
-  margin-left:.45rem; font-family:'JetBrains Mono', monospace;
-  font-size:.55rem; text-transform:uppercase; letter-spacing:1.8px;
-  color:rgba(244,239,230,.5);
-}
-
-.vals {
-  display:flex; flex-direction:column;
-  gap:.05rem;
-  flex:1;
-}
-.val {
-  display:flex; gap:.7rem; align-items:flex-start;
-  padding:.7rem 0;
-  border-top:1px dashed rgba(255,255,255,.08);
-  opacity:0;
-  animation:val-in .55s cubic-bezier(.6,.05,.2,1) forwards;
-}
-.val:first-of-type { border-top:none; }
-.val:nth-child(1) { animation-delay:.4s; }
-.val:nth-child(2) { animation-delay:.55s; }
-.val:nth-child(3) { animation-delay:.7s; }
-.val:nth-child(4) { animation-delay:.85s; }
-@keyframes val-in {
-  from { opacity:0; transform:translateX(8px); }
-  to   { opacity:1; transform:translateX(0); }
-}
-.val-icon {
-  width:30px; height:30px; border-radius:8px;
-  background:rgba(143,169,136,.15);
-  border:1px solid rgba(143,169,136,.28);
-  color:var(--sage-l);
-  display:flex; align-items:center; justify-content:center;
-  flex-shrink:0;
-}
-.val-icon svg { width:15px; height:15px; }
-.val-t {
-  font-family:'Archivo', sans-serif; font-weight:600;
-  font-size:.82rem; color:#fff; line-height:1.2;
-  margin-bottom:.18rem; letter-spacing:-.1px;
-}
-.val-d {
-  font-size:.7rem; color:rgba(244,239,230,.6); line-height:1.45;
-}
-
-.dash-foot {
-  margin-top:.7rem;
-  padding-top:.8rem;
-  border-top:1px dashed rgba(255,255,255,.08);
-  font-size:.66rem; line-height:1.45;
-  color:var(--sage-l); font-style:italic;
-  text-align:center;
-}
-
-/* ─── 3 SERVICE PILLARS (middle row) ─────────────── */
-.pillar {
-  grid-row: 2;
-  padding:1.15rem 1.15rem 1.15rem;
-  display:flex; flex-direction:column;
-}
-.pillar .pl-num {
-  font-family:'Archivo Black', sans-serif;
-  font-size:1.6rem; color:var(--sage-d);
-  line-height:1; margin-bottom:.55rem; letter-spacing:-1px;
-}
-.pillar h3 {
-  font-family:'Archivo Black', sans-serif;
-  font-size:1rem; letter-spacing:-.3px; color:var(--ink);
-  text-transform:uppercase; margin-bottom:.45rem;
-  line-height:1.1;
-}
-.pillar .pl-tag {
-  font-family:'JetBrains Mono', monospace;
-  font-size:.58rem; letter-spacing:1.6px; text-transform:uppercase;
-  color:var(--sage-d); margin-bottom:.55rem;
-}
-.pillar p {
-  font-size:.78rem; color:var(--ink-s); line-height:1.5;
-  margin-bottom:.65rem;
-}
-.pillar ul {
-  list-style:none; margin-top:auto;
-}
-.pillar ul li {
-  font-size:.72rem; padding:.22rem 0; padding-left:.85rem;
-  position:relative; color:var(--ink); line-height:1.4;
-  border-top:1px dashed var(--rule);
-}
-.pillar ul li:first-child { border-top:none; }
-.pillar ul li::before {
-  content:""; position:absolute; left:0; top:.5rem;
-  width:4px; height:4px; border-radius:50%; background:var(--sage-d);
-}
-
-/* ─── PARA QUIÉN (bottom strip, full width) ────── */
-.for-who {
-  grid-column: 1 / 4;
-  grid-row: 3;
-  background:var(--ink);
-  color:var(--cream);
-  border-radius:18px;
-  padding:1.5rem 1.6rem 1.4rem;
-  display:grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap:2rem;
-  align-items:start;
-  position:relative;
-  overflow:hidden;
-}
-.for-who::after {
-  content:""; position:absolute; left:-40px; bottom:-40px;
-  width:180px; height:180px; border-radius:50%;
-  background:radial-gradient(circle, rgba(143,169,136,.25), transparent 70%);
-  pointer-events:none;
-}
-.for-who-l { position:relative; z-index:1; }
-.for-who-l .eyebrow { color:var(--sage-l); }
-.for-who-l .eyebrow::before { background:var(--sage-l); }
-.for-who-l h2 {
-  font-family:'Archivo Black', sans-serif;
-  font-size:clamp(1.5rem, 2.4vw, 2rem);
-  line-height:.95; letter-spacing:-.6px;
-  color:#fff; text-transform:uppercase;
-}
-.for-who-l h2 em {
-  display:block; font-style:italic; font-family:'Archivo', sans-serif;
-  font-weight:400; text-transform:none; font-size:.55em;
-  color:var(--sage-l); letter-spacing:-.2px; margin-top:.35rem;
-}
-.for-who-r {
-  display:flex; flex-direction:column; gap:.05rem;
-  position:relative; z-index:1;
-}
-.who-row {
-  display:flex; gap:.85rem; align-items:flex-start;
-  padding:.8rem 0;
-  border-top:1px dashed rgba(255,255,255,.1);
-}
-.who-row:first-child { border-top:none; padding-top:.2rem; }
-.who-row:last-child { padding-bottom:.2rem; }
-.who-icon {
-  width:34px; height:34px; border-radius:9px;
-  background:rgba(143,169,136,.15);
-  border:1px solid rgba(143,169,136,.28);
-  color:var(--sage-l);
-  display:flex; align-items:center; justify-content:center;
-  flex-shrink:0;
-}
-.who-icon svg { width:17px; height:17px; }
-.who-t {
-  font-family:'Archivo', sans-serif; font-weight:600;
-  font-size:.92rem; color:#fff; line-height:1.2;
-  margin-bottom:.25rem; letter-spacing:-.1px;
-}
-.who-d {
-  font-size:.78rem; color:rgba(244,239,230,.65); line-height:1.5;
-}
-
-/* ─── FOOTER STRIP ───────────────────────────────── */
-.foot {
-  display:flex; align-items:center; justify-content:space-between;
-  font-family:'JetBrains Mono', monospace;
-  font-size:.62rem; letter-spacing:1.6px; text-transform:uppercase;
-  color:var(--ink-s);
-  padding-top:.3rem;
-}
-.foot .fl { display:flex; align-items:center; gap:1.2rem; }
-.foot .fr { display:flex; align-items:center; gap:1.2rem; }
-.foot a { transition:color .25s; }
-.foot a:hover { color:var(--sage-d); }
-.foot .sep { color:var(--rule); }
-
-/* ─── PROCESS MINI STRIP (inside hero bottom) ───── */
-.proc-strip {
-  display:flex; gap:1rem; margin-top:1.3rem;
-  padding-top:1.1rem; border-top:1px dashed var(--rule);
-}
-.proc-item {
-  flex:1; display:flex; align-items:flex-start; gap:.55rem;
-  position:relative;
-}
-.proc-item:not(:last-child)::after {
-  content:""; position:absolute; right:-8px; top:9px;
-  width:8px; height:1px; background:var(--rule);
-}
-.proc-circle {
-  width:26px; height:26px; border-radius:50%;
-  background:var(--cream); border:1.5px solid var(--ink);
-  display:flex; align-items:center; justify-content:center;
-  font-family:'Archivo Black', sans-serif; font-size:.68rem;
-  color:var(--ink); flex-shrink:0;
-  transition:all .4s ease;
-}
-.proc-item.on .proc-circle {
-  background:var(--sage-d); border-color:var(--sage-d); color:var(--cream);
-  transform:scale(1.05);
-}
-.proc-item { cursor:default; }
-.proc-item:hover .proc-circle {
-  background:var(--ink); border-color:var(--ink); color:var(--cream);
-  transform:scale(1.12);
-}
-.proc-item:hover .proc-t { color:var(--sage-d); }
-.proc-t {
-  font-family:'Archivo', sans-serif; font-weight:600;
-  font-size:.74rem; color:var(--ink); line-height:1.2;
-  margin-bottom:.12rem;
-}
-.proc-d {
-  font-size:.63rem; color:var(--ink-s); line-height:1.35;
-}
-
-/* ─── ANIMATIONS ─────────────────────────────────── */
-.fx {
-  opacity:0; transform:translateY(14px);
-  animation: fx-in .8s cubic-bezier(.6,.05,.2,1) forwards;
-}
-@keyframes fx-in {
-  to { opacity:1; transform:translateY(0); }
-}
-.fx:nth-child(1) { animation-delay:.05s; }
-.fx:nth-child(2) { animation-delay:.12s; }
-.fx:nth-child(3) { animation-delay:.19s; }
-.fx:nth-child(4) { animation-delay:.26s; }
-.fx:nth-child(5) { animation-delay:.33s; }
-.fx:nth-child(6) { animation-delay:.40s; }
-.fx:nth-child(7) { animation-delay:.47s; }
-.fx:nth-child(8) { animation-delay:.54s; }
-.fx:nth-child(9) { animation-delay:.61s; }
-@media (prefers-reduced-motion: reduce) {
-  .fx, .hero-lede { opacity:1; transform:none; filter:none; animation:none; }
-}
-
-/* ─── RESPONSIVE ─────────────────────────────────── */
-
-/* Tablet — collapse 3-col to 2-col */
-@media (max-width: 1180px) {
-  .page { padding:1rem; gap:.9rem; }
-  .main { grid-template-columns: 1fr 1fr; gap:.9rem; }
-  .hero { grid-column: 1; grid-row:auto; }
-  .dash { grid-column: 2; grid-row:auto; }
-  .pillar { grid-row:auto; }
-  .pillar:nth-child(3) { grid-column: 1; }
-  .pillar:nth-child(4) { grid-column: 2; }
-  .pillar:nth-child(5) { grid-column: 1 / 3; }
-  .for-who { grid-column: 1 / 3; grid-row: auto; grid-template-columns: 1fr; gap:1.2rem; }
-  .capsules { display:none; }
-  /* dash es media-ancho en tablet — valores como lista de una columna */
-  .vals { display:flex; flex-direction:column; gap:0; }
-}
-
-/* Mobile — single column, tighter, larger touch targets */
-@media (max-width: 720px) {
-  body { font-size:14px; line-height:1.5; }
-  .page { padding:.85rem; gap:.7rem; }
-  .nav { padding:.2rem 0; }
-  .nav-mid { display:none; }
-  .nav-cta {
-    padding:.55rem .9rem;
-    font-size:.65rem;
-    letter-spacing:1.2px;
-  }
-  .nav-cta-l { display:none; }
-  .nav-cta-s { display:inline; }
-  .brand-name { font-size:1.1rem; }
-
-  /* Stack the main grid */
-  .main { grid-template-columns: 1fr; gap:.7rem; }
-  .hero, .dash, .pillar, .for-who {
-    grid-column: 1;
-    grid-row: auto;
-  }
-  /* Override the tablet pillar nth-child rules */
-  .pillar:nth-child(3),
-  .pillar:nth-child(4),
-  .pillar:nth-child(5) { grid-column: 1; }
-
-  /* HERO — bigger, more readable on mobile */
-  .hero { padding:1.5rem 1.3rem 1.6rem; }
-  .hero h1 {
-    font-size:clamp(1.85rem, 8.5vw, 2.6rem);
-    letter-spacing:-1px;
-    line-height:1;
-  }
-  .hero-lede {
-    font-size:.95rem; line-height:1.55;
-  }
-  .hero-pill { font-size:.58rem; letter-spacing:1.5px; }
-  .hero-btns { gap:.5rem; }
-  .btn {
-    padding:.85rem 1.1rem;
-    font-size:.72rem;
-    letter-spacing:1.2px;
-    flex:1; /* full-width buttons on mobile */
-    justify-content:center;
-    text-align:center;
-  }
-
-  /* PROCESS STRIP — vertical on mobile */
-  .proc-strip {
-    flex-direction:column;
-    gap:.65rem;
-    margin-top:1.1rem;
-    padding-top:1rem;
-  }
-  .proc-item { width:100%; }
-  .proc-item::after { display:none; }
-  .proc-circle { width:30px; height:30px; font-size:.74rem; }
-  .proc-t { font-size:.82rem; }
-  .proc-d { font-size:.7rem; }
-
-  /* VALORES (dash card) — back to single column, comfortable */
-  .dash { padding:1.2rem 1.1rem 1rem; }
-  .vals { display:flex; flex-direction:column; gap:0; }
-  .val { padding:.75rem 0; gap:.7rem; }
-  .val-icon { width:32px; height:32px; }
-  .val-icon svg { width:16px; height:16px; }
-  .val-t { font-size:.88rem; }
-  .val-d { font-size:.75rem; }
-
-  /* PILLARS — bigger touch zones, clearer hierarchy */
-  .pillar { padding:1.25rem 1.15rem 1.3rem; }
-  .pillar .pl-num { font-size:1.9rem; margin-bottom:.5rem; }
-  .pillar h3 { font-size:1.05rem; letter-spacing:-.2px; }
-  .pillar p { font-size:.82rem; margin-bottom:.8rem; }
-  .pillar ul li { font-size:.78rem; padding:.32rem 0 .32rem .85rem; }
-  .pillar ul li::before { top:.6rem; }
-
-  /* PARA QUIÉN — stack vertically, comfortable */
-  .for-who {
-    grid-template-columns: 1fr;
-    gap:1.2rem;
-    padding:1.4rem 1.3rem 1.5rem;
-  }
-  .for-who-l h2 { font-size:1.6rem; }
-  .for-who-l h2 em { font-size:.62em; }
-  .who-row { padding:.85rem 0; gap:.75rem; }
-  .who-row:first-child { padding-top:.2rem; }
-  .who-t { font-size:.92rem; }
-  .who-d { font-size:.78rem; line-height:1.55; }
-
-  /* FOOTER */
-  .foot {
-    flex-direction:column;
-    gap:.6rem;
-    text-align:center;
-    padding-top:.5rem;
-  }
-  .foot .fl, .foot .fr {
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:.65rem;
-    font-size:.58rem;
-  }
-}
-
-/* Small phones */
-@media (max-width: 380px) {
-  .hero h1 { font-size:1.7rem; }
-  .hero-lede { font-size:.88rem; }
-  .nav-cta {
-    padding:.5rem .75rem;
-    font-size:.6rem;
-  }
-}
-</style>
+<link rel="stylesheet" href="assets/datika.css">
 </head>
 <body>
 
@@ -692,37 +69,55 @@ a { color:inherit; text-decoration:none; }
 
   <!-- ── NAV ── -->
   <nav class="nav">
-    <a href="#" class="brand" aria-label="DÁTIKA — inicio">
-      <div class="brand-sq">
-        <svg aria-hidden="true" viewBox="0 0 18 18" fill="none" stroke="#F4EFE6" stroke-width="2" stroke-linecap="round">
-          <rect x="1" y="9"  width="4" height="8"  rx="1"/>
-          <rect x="7" y="5"  width="4" height="12" rx="1"/>
-          <rect x="13" y="1" width="4" height="16" rx="1"/>
-        </svg>
+    <div class="nav-left">
+      <a href="index.html" class="brand" aria-label="DÁTIKA — inicio">
+        <div class="brand-sq">
+          <svg aria-hidden="true" viewBox="0 0 18 18" fill="none" stroke="#F4EFE6" stroke-width="2" stroke-linecap="round">
+            <rect x="1" y="9"  width="4" height="8"  rx="1"></rect>
+            <rect x="7" y="5"  width="4" height="12" rx="1"></rect>
+            <rect x="13" y="1" width="4" height="16" rx="1"></rect>
+          </svg>
+        </div>
+        <span class="brand-name">DÁTIKA</span>
+      </a>
+      <div class="menu-wrap">
+        <button class="menu-trigger" id="menuBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="menuPanel">
+          <span data-i18n="menu.title">Menú</span>
+          <svg class="chev" aria-hidden="true" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5l4 4 4-4"></path></svg>
+        </button>
+        <div class="menu-panel" id="menuPanel" role="menu">
+          <a href="index.html" aria-current="page" data-i18n="menu.home">Inicio</a>
+          <a href="acerca-de.html" data-i18n="menu.about">Acerca de</a>
+          <a href="trabaja-con-nosotros.html" data-i18n="menu.careers">Trabajá con nosotros</a>
+          <div class="menu-div"></div>
+          <div class="menu-cap" data-i18n="menu.soon">Próximamente</div>
+          <a class="is-soon" href="#" data-soon><span data-i18n="menu.cases">Casos de éxito</span><span class="soon">Pronto</span></a>
+        </div>
       </div>
-      <span class="brand-name">DÁTIKA</span>
-    </a>
-    <ul class="nav-mid">
-      <li><a href="#soluciones" data-i18n="nav.solutions">Soluciones</a></li>
-      <li><a href="#paraquien" data-i18n="nav.whoFor">Para quién</a></li>
-    </ul>
-    <div class="lang-switch" id="langSwitch" role="group" aria-label="Idioma / Language">
-      <span class="pill" aria-hidden="true"></span>
-      <button data-lang="es" class="on" aria-label="Español" aria-pressed="true">ES</button>
-      <button data-lang="en" aria-label="English" aria-pressed="false">EN</button>
     </div>
-    <a href="/cdn-cgi/l/email-protection#eb8f8a9f82808ac5989dab8c868a8287c5888486" class="nav-cta js-mailto">
-      <span class="nav-cta-l" data-i18n="nav.cta">Agendá una llamada</span>
-      <span class="nav-cta-s" data-i18n="nav.ctaShort">Agendá</span>
-      <svg aria-hidden="true" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
-    </a>
+    <div class="nav-tools">
+      <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="Cambiar tema">
+        <svg class="sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+        <svg class="moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 109.8 9.8z"></path></svg>
+      </button>
+      <div class="lang-switch" id="langSwitch" role="group" aria-label="Idioma / Language">
+        <span class="pill" aria-hidden="true"></span>
+        <button data-lang="es" class="on" aria-label="Español" aria-pressed="true">ES</button>
+        <button data-lang="en" aria-label="English" aria-pressed="false">EN</button>
+      </div>
+      <a href="#" class="nav-cta js-mailto">
+        <span class="nav-cta-l" data-i18n="nav.cta">Agendá una llamada</span>
+        <span class="nav-cta-s" data-i18n="nav.ctaShort">Agendá</span>
+        <svg aria-hidden="true" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"></path></svg>
+      </a>
+    </div>
   </nav>
 
   <!-- ── MAIN GRID ── -->
   <div class="main">
 
     <!-- HERO -->
-    <section class="hero fx">
+    <section class="hero fx" data-screen-label="Home / Hero">
       <div class="hero-pill"><i></i><span data-i18n="hero.pill">Inteligencia de Datos · Centroamérica</span></div>
       <h1 data-i18n="hero.h1">
         Decisiones<br>
@@ -730,9 +125,9 @@ a { color:inherit; text-decoration:none; }
       </h1>
       <p class="hero-lede" data-i18n="hero.lede">Para emprendedores con tracción y PYMEs establecidas que ya están cansados de operar a ciegas. Convertimos el desorden de tus datos en reportes claros, automatizados y accionables.</p>
       <div class="hero-btns">
-        <a href="/cdn-cgi/l/email-protection#81e5e0f5e8eae0aff2f7c1e6ece0e8edafe2eeec" class="btn btn-d js-mailto">
+        <a href="#" class="btn btn-d js-mailto">
           <span data-i18n="hero.btn1">Agendá tu diagnóstico</span>
-          <svg aria-hidden="true" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"></path></svg>
         </a>
         <a href="#soluciones" class="btn btn-o" data-i18n="hero.btn2">Cómo trabajamos</a>
       </div>
@@ -770,8 +165,8 @@ a { color:inherit; text-decoration:none; }
       </div>
     </section>
 
-    <!-- VALORES DE MARCA — no fake data, just what we stand for -->
-    <section class="dash card fx">
+    <!-- VALORES DE MARCA -->
+    <section class="dash card fx" data-screen-label="Home / Por qué DÁTIKA">
       <div class="dash-bar">
         <div class="dd"></div><div class="dd"></div><div class="dd"></div>
         <span class="dash-label" data-i18n="vals.label">por qué dátika</span>
@@ -781,8 +176,8 @@ a { color:inherit; text-decoration:none; }
         <div class="val">
           <div class="val-icon">
             <svg aria-hidden="true" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
-              <rect x="4" y="11" width="14" height="9" rx="1.5"/>
-              <path d="M8 11V7a3 3 0 016 0v4"/>
+              <rect x="4" y="11" width="14" height="9" rx="1.5"></rect>
+              <path d="M8 11V7a3 3 0 016 0v4"></path>
             </svg>
           </div>
           <div>
@@ -794,8 +189,8 @@ a { color:inherit; text-decoration:none; }
         <div class="val">
           <div class="val-icon">
             <svg aria-hidden="true" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
-              <circle cx="11" cy="11" r="8"/>
-              <path d="M7 11l3 3 5-6"/>
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="M7 11l3 3 5-6"></path>
             </svg>
           </div>
           <div>
@@ -807,7 +202,7 @@ a { color:inherit; text-decoration:none; }
         <div class="val">
           <div class="val-icon">
             <svg aria-hidden="true" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
-              <path d="M11 3L3 8v10h6v-6h4v6h6V8z"/>
+              <path d="M11 3L3 8v10h6v-6h4v6h6V8z"></path>
             </svg>
           </div>
           <div>
@@ -819,7 +214,7 @@ a { color:inherit; text-decoration:none; }
         <div class="val">
           <div class="val-icon">
             <svg aria-hidden="true" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
-              <path d="M4 11l4-4 4 4 4-4M4 16l4-4 4 4 4-4"/>
+              <path d="M4 11l4-4 4 4 4-4M4 16l4-4 4 4 4-4"></path>
             </svg>
           </div>
           <div>
@@ -835,7 +230,7 @@ a { color:inherit; text-decoration:none; }
     </section>
 
     <!-- PILLAR 1 - DATOS -->
-    <section class="pillar card hov fx" id="soluciones">
+    <section class="pillar card hov fx" id="soluciones" data-screen-label="Home / Servicios">
       <div class="pl-num">01</div>
       <div class="pl-tag" data-i18n="pl.tag">SERVICIO</div>
       <h3 data-i18n="pl1.title">Inteligencia de Datos</h3>
@@ -863,7 +258,7 @@ a { color:inherit; text-decoration:none; }
     </section>
 
     <!-- PILLAR 3 - MARKETING -->
-    <section class="pillar card hov fx" id="problema">
+    <section class="pillar card hov fx">
       <div class="pl-num">03</div>
       <div class="pl-tag" data-i18n="pl.tag">SERVICIO</div>
       <h3 data-i18n="pl3.title">Marketing Science</h3>
@@ -876,22 +271,21 @@ a { color:inherit; text-decoration:none; }
       </ul>
     </section>
 
-    <!-- PRICING ROW -->
-    <!-- ── PARA QUIÉN — single strip ── -->
-    <section class="for-who fx" id="paraquien">
+    <!-- ── PARA QUIÉN ── -->
+    <section class="for-who fx" id="paraquien" data-screen-label="Home / Para quién">
       <div class="for-who-l">
         <div class="eyebrow" data-i18n="who.eyebrow">Para quién</div>
         <h2 data-i18n="who.h2">Para los que se cansaron<br><em>de decidir por intuición.</em></h2>
-        <a href="/cdn-cgi/l/email-protection#dabebbaeb3b1bbf4a9ac9abdb7bbb3b6f4b9b5b7" class="btn btn-light js-mailto fw-cta">
+        <a href="#" class="btn btn-light js-mailto fw-cta">
           <span data-i18n="who.cta">Agendá tu diagnóstico</span>
-          <svg aria-hidden="true" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"></path></svg>
         </a>
       </div>
       <div class="for-who-r">
         <div class="who-row">
           <div class="who-icon">
             <svg aria-hidden="true" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
-              <path d="M3 18h16M5 18V9l6-5 6 5v9M9 18v-5h4v5"/>
+              <path d="M3 18h16M5 18V9l6-5 6 5v9M9 18v-5h4v5"></path>
             </svg>
           </div>
           <div>
@@ -902,9 +296,9 @@ a { color:inherit; text-decoration:none; }
         <div class="who-row">
           <div class="who-icon">
             <svg aria-hidden="true" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
-              <rect x="3" y="8" width="6" height="11" rx="1"/>
-              <rect x="13" y="3" width="6" height="16" rx="1"/>
-              <path d="M3 19h16"/>
+              <rect x="3" y="8" width="6" height="11" rx="1"></rect>
+              <rect x="13" y="3" width="6" height="16" rx="1"></rect>
+              <path d="M3 19h16"></path>
             </svg>
           </div>
           <div>
@@ -915,8 +309,8 @@ a { color:inherit; text-decoration:none; }
         <div class="who-row">
           <div class="who-icon">
             <svg aria-hidden="true" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
-              <circle cx="11" cy="11" r="8"/>
-              <path d="M11 6v5l3 2"/>
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="M11 6v5l3 2"></path>
             </svg>
           </div>
           <div>
@@ -939,26 +333,21 @@ a { color:inherit; text-decoration:none; }
       <span>Daniel Pineda &amp; Gabriela Lazo</span>
     </div>
     <div class="fr">
-      <a href="/cdn-cgi/l/email-protection#debabfaab7b5bff0ada89eb9b3bfb7b2f0bdb1b3"><span class="__cf_email__" data-cfemail="1d797c6974767c336e6b5d7a707c7471337e7270">[email&#160;protected]</span></a>
+      <a href="#" data-email></a>
       <span class="sep">·</span>
       <a href="https://www.instagram.com/somosdatika/">Instagram</a>
       <a href="https://www.linkedin.com/company/somosdatika">LinkedIn</a>
     </div>
   </footer>
 
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-
-/* ─── i18n ─── */
-const i18n = {
-  es: {},  // Spanish is the source; empty means use existing HTML
+<script>
+/* Traducciones EN de esta página (el español del HTML es la fuente) */
+window.DATIKA_I18N = {
   en: {
-    'nav.solutions': 'Solutions',
-    'nav.whoFor': 'Who it\'s for',
-    'nav.cta': 'Book a call',
-    'nav.ctaShort': 'Book',
-
     'hero.pill': 'Data Intelligence · Central America',
     'hero.h1': 'Decisions<br><span class="sage">that move</span> money.',
     'hero.lede': 'For entrepreneurs with traction and established SMBs tired of operating in the dark. We turn your scattered data into clear, automated, actionable reports.',
@@ -982,7 +371,6 @@ const i18n = {
     'vals.foot': 'No fluff. No empty promises. Just clarity about your business.',
 
     'pl.tag': 'SERVICE',
-
     'pl1.title': 'Data Intelligence',
     'pl1.desc': 'Know how much you make, what it costs, what actually pays off. Dashboards and analysis with your real data.',
     'pl1.li1': 'Financial and commercial dashboards',
@@ -1012,111 +400,37 @@ const i18n = {
     'who.2t': 'SMBs and established companies',
     'who.2d': 'You already have systems, stable sales, a team. But reports arrive late and decisions are made in the dark.',
     'who.3t': 'Businesses on their second leap',
-    'who.3d': 'You\'re growing, but the business is getting complex faster than your ability to measure it. Before hiring more people, get to know your numbers.',
-
-    'foot.region': 'Central America'
+    'who.3d': 'You\'re growing, but the business is getting complex faster than your ability to measure it. Before hiring more people, get to know your numbers.'
   }
 };
-
-// store original (Spanish) HTML on first paint so we can restore it
-document.querySelectorAll('[data-i18n]').forEach(el => {
-  el.dataset.i18nEs = el.innerHTML;
-});
-
-/* ─── Mailto pre-llenado (asunto + plantilla, según idioma) ─── */
-const MAILTO = {
-  to: 'datika.sv@gmail.com',
-  es: {
-    subject: 'Quiero un diagnóstico — DÁTIKA',
-    body: 'Hola DÁTIKA,\n\nMi negocio se dedica a: \nLo que más me gustaría resolver: \nFacturación / tamaño aproximado: \n\nQuedo atento(a). ¡Gracias!'
-  },
-  en: {
-    subject: "I'd like a diagnostic — DÁTIKA",
-    body: 'Hi DÁTIKA,\n\nMy business does: \nWhat I would most like to solve: \nApproximate revenue / size: \n\nLooking forward to hearing from you. Thanks!'
-  }
+window.DATIKA_META = {
+  es: { title: 'DÁTIKA | Inteligencia de Datos para Emprendedores', desc: 'Acelera el crecimiento de tu PYME con DÁTIKA. Consultoría experta en Inteligencia de Datos y Marketing Science. Optimiza tus costos y vende más.' },
+  en: { title: 'DÁTIKA | Data Intelligence for Entrepreneurs', desc: 'Accelerate your SMB\'s growth with DÁTIKA. Expert consulting in Data Intelligence and Marketing Science. Optimize costs and sell more.' }
 };
-function applyMailto(lang) {
-  const m = MAILTO[lang] || MAILTO.es;
-  const href = `mailto:${MAILTO.to}?subject=${encodeURIComponent(m.subject)}&body=${encodeURIComponent(m.body)}`;
-  document.querySelectorAll('a.js-mailto').forEach(a => { a.href = href; });
-}
-
-function setLang(lang) {
-  document.documentElement.lang = lang;
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.dataset.i18n;
-    if (lang === 'es') {
-      el.innerHTML = el.dataset.i18nEs;
-    } else if (i18n.en[key] !== undefined) {
-      el.innerHTML = i18n.en[key];
-    }
-  });
-  // title + meta description
-  if (lang === 'en') {
-    document.title = 'DÁTIKA | Data Intelligence for Entrepreneurs';
-    const m = document.querySelector('meta[name="description"]');
-    if (m) m.content = 'Accelerate your SMB\'s growth with DÁTIKA. Expert consulting in Data Intelligence and Marketing Science. Optimize costs and sell more.';
-  } else {
-    document.title = 'DÁTIKA | Inteligencia de Datos para Emprendedores';
-    const m = document.querySelector('meta[name="description"]');
-    if (m) m.content = 'Acelera el crecimiento de tu PYME con DÁTIKA. Consultoría experta en Inteligencia de Datos y Marketing Science. Optimiza tus costos y vende más.';
-  }
-  // toggle UI
-  const sw = document.getElementById('langSwitch');
-  sw.classList.toggle('en', lang === 'en');
-  sw.querySelectorAll('button').forEach(b => {
-    const active = b.dataset.lang === lang;
-    b.classList.toggle('on', active);
-    b.setAttribute('aria-pressed', active ? 'true' : 'false');
-  });
-  try { localStorage.setItem('datika-lang', lang); } catch(e){}
-  applyMailto(lang);
-}
-
-document.querySelectorAll('#langSwitch button').forEach(b => {
-  b.addEventListener('click', () => setLang(b.dataset.lang));
-});
-
-// restore saved lang
-try {
-  const saved = localStorage.getItem('datika-lang');
-  if (saved === 'en') setLang('en');
-} catch(e){}
-applyMailto(document.documentElement.lang === 'en' ? 'en' : 'es');
-
-/* Process strip — light up circles sequentially when it scrolls into view */
-const procStrip = document.getElementById('procStrip');
-if (procStrip) {
-  let played = false;
-  const runProc = () => {
+</script>
+<script src="assets/datika.js"></script>
+<script>
+/* Process strip — círculos se encienden al entrar en vista */
+(function () {
+  var procStrip = document.getElementById('procStrip');
+  if (!procStrip) return;
+  var played = false;
+  var runProc = function () {
     if (played) return;
     played = true;
-    procStrip.querySelectorAll('.proc-item').forEach((it, i) => {
-      setTimeout(() => it.classList.add('on'), i * 250);
+    procStrip.querySelectorAll('.proc-item').forEach(function (it, i) {
+      setTimeout(function () { it.classList.add('on'); }, i * 250);
     });
   };
   if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { runProc(); io.disconnect(); } });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { runProc(); io.disconnect(); } });
     }, { threshold: 0.4 });
     io.observe(procStrip);
   } else {
     setTimeout(runProc, 900);
   }
-}
-
-/* Smooth anchor scroll for the few in-page links */
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const id = a.getAttribute('href');
-    if (id === '#') return;
-    const t = document.querySelector(id);
-    if (t) {
-      e.preventDefault();
-      t.scrollIntoView({behavior:'smooth', block:'start'});
-    }
-  });
-});
+})();
 </script>
 
 </body>

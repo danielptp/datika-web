@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-11QB5ZGGHC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-11QB5ZGGHC');
+</script>
+
+<title>DÁTIKA | Acerca de</title>
+<meta name="description" content="Quiénes somos: Daniel Pineda y Gabriela Lazo, cofundadores de DÁTIKA. Lógica + creatividad para que los emprendedores de Centroamérica dejen de operar a ciegas.">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="DÁTIKA">
+<meta property="og:title" content="DÁTIKA · Acerca de">
+<meta property="og:description" content="Dos cofundadores, dos miradas — datos y marketing — y una meta: que sepás exactamente dónde está tu dinero.">
+<meta property="og:image" content="og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DÁTIKA — Inteligencia de Datos">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="favicon.png">
+<script>(function(){try{var t=localStorage.getItem('datika-theme')||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
+<link rel="stylesheet" href="assets/datika.css">
+<style>
+/* ─── Estilos propios de Acerca de ─── */
+.hero-body {
+  font-size:.85rem; color:var(--ink-s); line-height:1.6;
+  max-width:58ch; margin-bottom:1.1rem;
+}
+.menu-panel a[aria-current="page"] { background:rgba(143,169,136,.13); }
+.bio-card ul { margin-top:auto; }
+</style>
+</head>
+<body>
+
+<div class="capsules" aria-hidden="true"><i></i><i></i></div>
+
+<div class="page">
+
+  <!-- ── NAV ── -->
+  <nav class="nav">
+    <div class="nav-left">
+      <a href="index.html" class="brand" aria-label="DÁTIKA — inicio">
+        <div class="brand-sq">
+          <svg aria-hidden="true" viewBox="0 0 18 18" fill="none" stroke="#F4EFE6" stroke-width="2" stroke-linecap="round">
+            <rect x="1" y="9"  width="4" height="8"  rx="1"></rect>
+            <rect x="7" y="5"  width="4" height="12" rx="1"></rect>
+            <rect x="13" y="1" width="4" height="16" rx="1"></rect>
+          </svg>
+        </div>
+        <span class="brand-name">DÁTIKA</span>
+      </a>
+      <div class="menu-wrap">
+        <button class="menu-trigger" id="menuBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="menuPanel">
+          <span data-i18n="menu.title">Menú</span>
+          <svg class="chev" aria-hidden="true" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5l4 4 4-4"></path></svg>
+        </button>
+        <div class="menu-panel" id="menuPanel" role="menu">
+          <a href="index.html" data-i18n="menu.home">Inicio</a>
+          <a href="acerca-de.html" aria-current="page" data-i18n="menu.about">Acerca de</a>
+          <a href="trabaja-con-nosotros.html" data-i18n="menu.careers">Trabajá con nosotros</a>
+          <div class="menu-div"></div>
+          <div class="menu-cap" data-i18n="menu.soon">Próximamente</div>
+          <a class="is-soon" href="#" data-soon><span data-i18n="menu.cases">Casos de éxito</span><span class="soon">Pronto</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-tools">
+      <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="Cambiar tema">
+        <svg class="sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+        <svg class="moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 109.8 9.8z"></path></svg>
+      </button>
+      <div class="lang-switch" id="langSwitch" role="group" aria-label="Idioma / Language">
+        <span class="pill" aria-hidden="true"></span>
+        <button data-lang="es" class="on" aria-label="Español" aria-pressed="true">ES</button>
+        <button data-lang="en" aria-label="English" aria-pressed="false">EN</button>
+      </div>
+      <a href="#" class="nav-cta js-mailto">
+        <span class="nav-cta-l" data-i18n="nav.cta">Agendá una llamada</span>
+        <span class="nav-cta-s" data-i18n="nav.ctaShort">Agendá</span>
+        <svg aria-hidden="true" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"></path></svg>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ── MAIN GRID ── -->
+  <div class="main">
+
+    <!-- HERO / HISTORIA -->
+    <section class="hero fx" data-screen-label="Acerca de / Historia">
+      <div class="hero-pill"><i></i><span data-i18n="ab.pill">Acerca de · DÁTIKA</span></div>
+      <h1 data-i18n="ab.h1">
+        Dos cabezas,<br>
+        <span class="sage">una meta.</span>
+      </h1>
+      <p class="hero-lede" data-i18n="ab.lede">DÁTIKA nació en El Salvador, viendo de cerca a emprendedores que trabajan incansablemente — pero a ciegas.</p>
+      <p class="hero-body" data-i18n="ab.body">El negocio crece en ventas, pero el control financiero se queda atrás y las decisiones se toman por pura intuición. Por eso existimos: somos el puente que transforma datos desordenados en estrategias claras, medibles y rentables. Nuestra meta es simple — que sepás exactamente dónde está tu dinero.</p>
+      <div class="hero-btns">
+        <a href="index.html#soluciones" class="btn btn-d">
+          <span data-i18n="ab.btn1">Conocé nuestras soluciones</span>
+          <svg aria-hidden="true" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"></path></svg>
+        </a>
+        <a href="trabaja-con-nosotros.html" class="btn btn-o" data-i18n="ab.btn2">Trabajá con nosotros</a>
+      </div>
+    </section>
+
+    <!-- LÓGICA + CREATIVIDAD -->
+    <section class="dash card fx" data-screen-label="Acerca de / Lógica + Creatividad">
+      <div class="dash-bar">
+        <div class="dd"></div><div class="dd"></div><div class="dd"></div>
+        <span class="dash-label" data-i18n="ab.eq.label">lógica + creatividad</span>
+      </div>
+
+      <div class="vals">
+        <div class="val">
+          <div class="val-icon">
+            <svg aria-hidden="true" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+              <rect x="3" y="11" width="4" height="8" rx="1"></rect>
+              <rect x="9" y="7" width="4" height="12" rx="1"></rect>
+              <rect x="15" y="3" width="4" height="16" rx="1"></rect>
+            </svg>
+          </div>
+          <div>
+            <div class="val-t" data-i18n="ab.eq.1t">Lógica</div>
+            <div class="val-d" data-i18n="ab.eq.1d">La estructura, el rigor analítico y la capacidad técnica para volver digerible una base de datos compleja.</div>
+          </div>
+        </div>
+
+        <div class="val">
+          <div class="val-icon">
+            <svg aria-hidden="true" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M11 2l1.8 5.2L18 9l-5.2 1.8L11 16l-1.8-5.2L4 9l5.2-1.8z"></path>
+              <path d="M17.5 14.5l.9 2.6 2.6.9-2.6.9-.9 2.6-.9-2.6-2.6-.9 2.6-.9z"></path>
+            </svg>
+          </div>
+          <div>
+            <div class="val-t" data-i18n="ab.eq.2t">Creatividad</div>
+            <div class="val-d" data-i18n="ab.eq.2d">La visión comercial: qué significan esos datos para el mercado, la marca y las ventas reales.</div>
+          </div>
+        </div>
+
+        <div class="val">
+          <div class="val-icon">
+            <svg aria-hidden="true" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+              <path d="M5 9h12M5 13h12"></path>
+            </svg>
+          </div>
+          <div>
+            <div class="val-t" data-i18n="ab.eq.3t">DÁTIKA</div>
+            <div class="val-d" data-i18n="ab.eq.3d">Cada análisis lleva ambas miradas. No proveedores: socios de tu negocio.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-foot" data-i18n="ab.eq.foot">
+        Hablamos español, no código.
+      </div>
+    </section>
+
+    <!-- BIO — DANIEL -->
+    <section class="pillar card hov fx bio-card" data-screen-label="Acerca de / Daniel">
+      <div class="bio-head">
+        <div class="avatar">DP</div>
+        <div>
+          <div class="bio-name" data-i18n="ab.d.name">Daniel Pineda</div>
+          <div class="bio-role" data-i18n="ab.d.role">Cofundador · Inteligencia de Datos</div>
+        </div>
+      </div>
+      <p data-i18n="ab.d.bio">Ingeniero industrial con maestría en ciencia de datos. Convierte bases de datos complejas en información que cualquier dueño de negocio puede entender y usar.</p>
+      <ul>
+        <li data-i18n="ab.d.li1">Dashboards en Power BI y Looker Studio</li>
+        <li data-i18n="ab.d.li2">Modelos predictivos y análisis estadístico</li>
+        <li data-i18n="ab.d.li3">Automatización e integración de reportes</li>
+        <li data-i18n="ab.d.li4">Modelado financiero y proyecciones</li>
+      </ul>
+    </section>
+
+    <!-- BIO — GABRIELA -->
+    <section class="pillar card hov fx bio-card" data-screen-label="Acerca de / Gabriela">
+      <div class="bio-head">
+        <div class="avatar">GL</div>
+        <div>
+          <div class="bio-name" data-i18n="ab.g.name">Gabriela Lazo</div>
+          <div class="bio-role" data-i18n="ab.g.role">Cofundadora · Inteligencia de Marketing</div>
+        </div>
+      </div>
+      <p data-i18n="ab.g.bio">Licenciada en mercadeo con experiencia en datos, marketing y emprendimiento. Traduce los números en decisiones de mercado, marca y ventas.</p>
+      <ul>
+        <li data-i18n="ab.g.li1">Estrategia de precios y posicionamiento</li>
+        <li data-i18n="ab.g.li2">Segmentación y alcance de mercado</li>
+        <li data-i18n="ab.g.li3">Análisis de competencia</li>
+        <li data-i18n="ab.g.li4">Narrativa y presentación de resultados</li>
+      </ul>
+    </section>
+
+    <!-- MISIÓN Y VISIÓN -->
+    <section class="pillar card hov fx" data-screen-label="Acerca de / Misión y visión">
+      <div class="pl-tag" data-i18n="ab.mv.tag">NUESTRO NORTE</div>
+      <div class="block">
+        <h3 data-i18n="ab.mv.1t">Misión</h3>
+        <p data-i18n="ab.mv.1d">Que los emprendedores tomen decisiones inteligentes basadas en evidencia: transformamos datos desordenados en análisis claros, accionables y estrategias de marketing efectivas que aseguren rentabilidad y crecimiento sostenible.</p>
+      </div>
+      <div class="block">
+        <h3 data-i18n="ab.mv.2t">Visión</h3>
+        <p data-i18n="ab.mv.2d">Ser referentes en inteligencia de datos, control financiero y estrategia de marketing para emprendedores en Centroamérica — el estándar de profesionalización para las PYMEs de la región.</p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-strip fx" data-screen-label="Acerca de / CTA">
+      <h2 data-i18n="ab.cta.h2">¿Hablamos?<br><em>Tu negocio ya genera los datos. Falta verlos claro.</em></h2>
+      <a href="#" class="btn btn-light js-mailto">
+        <span data-i18n="ab.cta.btn">Agendá una llamada</span>
+        <svg aria-hidden="true" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"></path></svg>
+      </a>
+    </section>
+
+  </div>
+
+  <!-- ── FOOTER STRIP ── -->
+  <footer class="foot">
+    <div class="fl">
+      <span>© 2026 DÁTIKA</span>
+      <span class="sep">·</span>
+      <span data-i18n="foot.region">Centroamérica</span>
+      <span class="sep">·</span>
+      <span>Daniel Pineda &amp; Gabriela Lazo</span>
+    </div>
+    <div class="fr">
+      <a href="#" data-email></a>
+      <span class="sep">·</span>
+      <a href="https://www.instagram.com/somosdatika/">Instagram</a>
+      <a href="https://www.linkedin.com/company/somosdatika">LinkedIn</a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+</div>
+
+<script>
+window.DATIKA_I18N = {
+  en: {
+    'ab.pill': 'About · DÁTIKA',
+    'ab.h1': 'Two heads,<br><span class="sage">one goal.</span>',
+    'ab.lede': 'DÁTIKA was born in El Salvador, watching entrepreneurs work tirelessly — but in the dark.',
+    'ab.body': 'The business grows in sales, but financial control falls behind and decisions are made on pure gut feeling. That\'s why we exist: we are the bridge that turns messy data into clear, measurable, profitable strategies. Our goal is simple — that you know exactly where your money is.',
+    'ab.btn1': 'See our solutions',
+    'ab.btn2': 'Work with us',
+
+    'ab.eq.label': 'logic + creativity',
+    'ab.eq.1t': 'Logic',
+    'ab.eq.1d': 'The structure, analytical rigor and technical skill to make a complex database digestible.',
+    'ab.eq.2t': 'Creativity',
+    'ab.eq.2d': 'The commercial vision: what that data means for the market, the brand and real sales.',
+    'ab.eq.3t': 'DÁTIKA',
+    'ab.eq.3d': 'Every analysis carries both perspectives. Not vendors: partners in your business.',
+    'ab.eq.foot': 'We speak business, not code.',
+
+    'ab.d.name': 'Daniel Pineda',
+    'ab.d.role': 'Co-founder · Data Intelligence',
+    'ab.d.bio': 'Industrial engineer with a master\'s in data science. He turns complex databases into information any business owner can understand and use.',
+    'ab.d.li1': 'Dashboards in Power BI and Looker Studio',
+    'ab.d.li2': 'Predictive models and statistical analysis',
+    'ab.d.li3': 'Report automation and integration',
+    'ab.d.li4': 'Financial modeling and projections',
+
+    'ab.g.name': 'Gabriela Lazo',
+    'ab.g.role': 'Co-founder · Marketing Intelligence',
+    'ab.g.bio': 'Marketing graduate with experience in data, marketing and entrepreneurship. She translates the numbers into market, brand and sales decisions.',
+    'ab.g.li1': 'Pricing strategy and positioning',
+    'ab.g.li2': 'Segmentation and market reach',
+    'ab.g.li3': 'Competitive analysis',
+    'ab.g.li4': 'Narrative and presentation of results',
+
+    'ab.mv.tag': 'OUR NORTH STAR',
+    'ab.mv.1t': 'Mission',
+    'ab.mv.1d': 'That entrepreneurs make smart, evidence-based decisions: we turn messy data into clear, actionable analysis and effective marketing strategies that ensure profitability and sustainable growth.',
+    'ab.mv.2t': 'Vision',
+    'ab.mv.2d': 'To be the reference in data intelligence, financial control and marketing strategy for entrepreneurs in Central America — the professionalization standard for the region\'s SMBs.',
+
+    'ab.cta.h2': 'Shall we talk?<br><em>Your business already generates the data. It just needs to be seen clearly.</em>',
+    'ab.cta.btn': 'Book a call'
+  }
+};
+window.DATIKA_META = {
+  es: { title: 'DÁTIKA | Acerca de', desc: 'Quiénes somos: Daniel Pineda y Gabriela Lazo, cofundadores de DÁTIKA. Lógica + creatividad para que los emprendedores de Centroamérica dejen de operar a ciegas.' },
+  en: { title: 'DÁTIKA | About us', desc: 'Who we are: Daniel Pineda and Gabriela Lazo, co-founders of DÁTIKA. Logic + creativity so Central American entrepreneurs stop operating in the dark.' }
+};
+</script>
+<script src="assets/datika.js"></script>
+
+</body>
+</html>
