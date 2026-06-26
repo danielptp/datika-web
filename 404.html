@@ -51,7 +51,10 @@
       Volver al inicio
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"></path></svg>
     </a>
-    <div class="meta">DÁTIKA · El Salvador · <a href="mailto:datika.sv@gmail.com">datika.sv@gmail.com</a></div>
+    <div class="meta">DÁTIKA · El Salvador · <a href="https://wa.me/50371461498" target="_blank" rel="noopener">WhatsApp</a> · <a data-em="datika.sv" data-do="gmail.com" href="#"><span data-emtext>Correo</span></a></div>
   </main>
+  <script>
+    document.querySelectorAll('a[data-em][data-do]').forEach(function(el){var addr=el.getAttribute('data-em')+'@'+el.getAttribute('data-do');el.setAttribute('href','mailto:'+addr);var s=el.querySelector('[data-emtext]');if(s)s.textContent=addr;});
+  </script>
 </body>
 </html>
