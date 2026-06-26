@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,9 +43,9 @@
 <script>(function(){try{var t=localStorage.getItem('datika-theme')||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
 <style>
   :root{
-    --page:#F4EFE6; --surface:#FBF8F1; --text:#1E1A2E; --text-soft:#3D3550; --muted:#7c7689;
+    --page:#F4EFE6; --surface:#FBF8F1; --text:#1E1A2E; --text-soft:#3D3550; --muted:#6f687d;
     --rule:#D9D2C4; --ink-block:#1E1A2E; --on-ink:#F4EFE6; --sage:#8FA988; --sage-d:#6B8869;
-    --sage-l:#B5C9B0; --rust:#C2462B; --eyebrow:#6B8869; --brand-sq:#1E1A2E;
+    --sage-l:#B5C9B0; --rust:#C2462B; --eyebrow:#56744f; --brand-sq:#1E1A2E;
     --header-bg:rgba(244,239,230,0.82); --chip-bg:rgba(255,255,255,0.42); --tool-bg:rgba(143,169,136,0.10);
     --cta-bg:#1E1A2E; --cta-fg:#F4EFE6; --cta-hover:#6B8869; --sage-tint:rgba(143,169,136,0.14); --field:#fff;
   }
@@ -69,6 +69,10 @@
   [data-theme="dark"] [data-sun]{display:block;}
   [data-theme="dark"] [data-moon]{display:none;}
   @media (prefers-reduced-motion: reduce){*{animation:none!important;}}
+  /* A11y — visible keyboard-focus rings (audit add) */
+  a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--sage-d);outline-offset:3px;border-radius:8px;}
+  input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--sage-d);outline-offset:2px;}
+  [data-theme="dark"] a:focus-visible,[data-theme="dark"] button:focus-visible,[data-theme="dark"] [tabindex]:focus-visible,[data-theme="dark"] input:focus-visible{outline-color:var(--sage-l);}
 </style>
 </helmet>
 
@@ -291,7 +295,7 @@ class Component extends DCLogic {
   componentDidMount() {
     // ── Config ──
     this.EMAIL = 'datika.sv@gmail.com';
-    this.WHATSAPP_NUM = ''; // ej: '50370000000' (sin + ni espacios). Vacío = WhatsApp deja elegir contacto.
+    this.WHATSAPP_NUM = '50371461498'; // +503 7146 1498 (sin + ni espacios)
 
     this.QUESTIONS = [
       { labelEs:'Visibilidad', labelEn:'Visibility',
